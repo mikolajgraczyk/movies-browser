@@ -5,14 +5,24 @@ import {
   InfoNumber,
   InfoText,
   PageInfo,
+  LeftArrow,
+  RightArrow,
+  ButtonText,
 } from "./styled";
 
 const Pagination = () => {
   return (
     <StyledPagination>
       <ButtonsWrapper>
-        <Button>First</Button>
-        <Button>Previous</Button>
+        <Button>
+          <LeftArrow mobile />
+          <LeftArrow />
+          <ButtonText>First</ButtonText>
+        </Button>
+        <Button>
+          <LeftArrow />
+          <ButtonText>Previous</ButtonText>
+        </Button>
       </ButtonsWrapper>
       <PageInfo>
         <InfoText>Page</InfoText>
@@ -21,8 +31,15 @@ const Pagination = () => {
         <InfoNumber>500</InfoNumber>
       </PageInfo>
       <ButtonsWrapper>
-        <Button>Next</Button>
-        <Button>Last</Button>
+        <Button>
+          <ButtonText>Next</ButtonText>
+          <RightArrow />
+        </Button>
+        <Button>
+          <ButtonText>Last</ButtonText>
+          <RightArrow />
+          <RightArrow mobile />
+        </Button>
       </ButtonsWrapper>
     </StyledPagination>
   );
