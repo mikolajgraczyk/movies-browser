@@ -5,8 +5,6 @@ import { ReactComponent as RightArrowIcon } from "./images/arrow-right.svg";
 const bpMobile = ({ theme }) => theme.breakpoint.mobile;
 
 export const StyledPagination = styled.section`
-  margin: 100px auto; // poglądowe
-  max-width: 500px; // poglądowe
   display: flex;
   align-items: center;
   justify-content: center;
