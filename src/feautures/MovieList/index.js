@@ -1,18 +1,18 @@
-import { Tile } from "../../common/Tile";
+import { MovieTile } from "./MovieTile";
 import { StyledMovies } from "./styled";
 
 const MovieList = () => {
 
     return (
         <StyledMovies>
-            <Tile
+            <MovieTile
                 poster=""
                 title="Mulan: Forever and Ever"
                 subtitle="2023"
                 // rate=""
                 // votes=""
             />
-            <Tile
+            <MovieTile
                 poster=""
                 title="Mulan: Forever and Ever"
                 subtitle="2023"

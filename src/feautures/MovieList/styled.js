@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const StyledMovies = styled.div`
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 24px;
     `;

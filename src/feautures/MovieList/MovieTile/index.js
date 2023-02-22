@@ -3,7 +3,7 @@ import { MovieInfo, Poster, StyledTile, Subtitle, Title, Dummy } from "./styled"
 import Tags from "./Tags";
 
 
-export const Tile = ({ poster, title, subtitle, rate, votes }) => {
+export const MovieTile = ({ poster, title, subtitle, rate, votes }) => {
 
     return (
         <>
