@@ -4,12 +4,11 @@ const bpMobile = ({ theme }) => theme.breakpoint.mobile;
 
 export const StyledSection = styled.div`
     margin: 0 auto;
-    padding-top: 56px;
+    padding: 56px 16px 0 16px;
     max-width: 1368px;
    
     @media (max-width: ${bpMobile}px) {
-        padding-top: 24px;
-        max-width: 288px;
+        padding: 24px 16px 0 16px;
   }
 `;
 
