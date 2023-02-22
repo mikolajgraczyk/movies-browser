@@ -2,7 +2,6 @@ import styled from "styled-components";
 import { ReactComponent as DummyMovie } from "./video.svg";
 
 export const StyledTile = styled.div`
-    margin: 16px;
     display: grid;
     grid-template-columns: 1fr ;
     grid-gap: 16px;
