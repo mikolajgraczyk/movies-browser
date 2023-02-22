@@ -6,8 +6,9 @@ export const Wrapper = styled.header`
     background: ${({ theme }) => theme.color.woodsmoke};
     height: 94px;
     display: grid;
-    grid-template-columns: 1fr 1.6fr 1fr;
-    padding: 35px 293px;
+    gap: 80px;
+    grid-template-columns: 1.5fr 1fr 2fr;
+    padding: 35px 16px 35px 16px;
     align-content: center;
     color: ${({ theme }) => theme.color.white};
     width: 100%;
@@ -24,10 +25,12 @@ export const TitleWrapper = styled.div`
     display: flex;
     gap: 12px;
     align-items: center;
+    justify-self: right;
 
     @media(max-width: ${({ theme }) => theme.breakpoint.mobileMax}px){
         gap: 8px;
         margin-top: 8px;
+        justify-self: left;
     }
 `;
 
@@ -53,11 +56,13 @@ export const ButtonsWrapper = styled.div`
     display: flex;
     gap: 16px;
     flex-grow: 1;
+    justify-self: left;
 
     @media(max-width: ${({ theme }) => theme.breakpoint.mobileMax}px){
         gap: 12px;
         flex-grow: 0;
         margin-top: 8px;
+        justify-self: right;
     }
 `;
 
