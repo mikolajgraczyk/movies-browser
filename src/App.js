@@ -1,8 +1,7 @@
+import Pagination from "./common/Pagination";
 
 function App() {
-  return (
-    <></>
-  );
+  return <Pagination />;
 }
 
 export default App;
