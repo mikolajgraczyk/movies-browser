@@ -12,7 +12,7 @@ export const StyledTile = styled.div`
     width: 324px;
     height: 650px;
 
-    @media (max-width: 320px) {
+    @media (max-width: ${({ theme }) => theme.breakpoint.mobile}px) {
         grid-template-columns: auto 1fr;
         width: 288px;
         height: 201px;
@@ -33,7 +33,7 @@ export const Poster = styled.div`
     background-color: #C4C4C4;
     border-radius: 5px;
    
-    @media (max-width: 320px) {
+    @media (max-width: ${({ theme }) => theme.breakpoint.mobile}px) {
         width: 114px;
         height: 169px;
     }
@@ -50,7 +50,7 @@ export const Title = styled.h2`
     font-size: 22px;
     line-height: 130%;
 
-    @media (max-width: 320px) {
+    @media (max-width: ${({ theme }) => theme.breakpoint.mobile}px) {
         font-size: 16px;
     }     
 `;
@@ -62,7 +62,7 @@ export const Subtitle = styled.p`
     font-size: 16px;
     line-height: 150%;
 
-    @media (max-width: 320px) {
+    @media (max-width: ${({ theme }) => theme.breakpoint.mobile}px) {
         font-size: 13px;
         line-height: 130%;
     }       
@@ -72,7 +72,7 @@ export const Dummy = styled(DummyMovie)`
     width: 80px;
     height: 60px;
 
-    @media (max-width: 320px) {
+    @media (max-width: ${({ theme }) => theme.breakpoint.mobile}px) {
         width: 40px;
         height: 30px;
     }    
