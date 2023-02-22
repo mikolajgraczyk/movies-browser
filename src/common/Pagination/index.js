@@ -41,12 +41,12 @@ const Pagination = () => {
   return (
     <StyledPagination>
       <ButtonsWrapper>
-        <Button onClick={onGoToFirst}>
+        <Button disabled={currentPage === 1} onClick={onGoToFirst}>
           <LeftArrow mobile="true" />
           <LeftArrow />
           <ButtonText>First</ButtonText>
         </Button>
-        <Button onClick={onGoToPrevious}>
+        <Button disabled={currentPage === 1} onClick={onGoToPrevious}>
           <LeftArrow />
           <ButtonText>Previous</ButtonText>
         </Button>
@@ -58,11 +58,11 @@ const Pagination = () => {
         <InfoNumber>500</InfoNumber>
       </PageInfo>
       <ButtonsWrapper>
-        <Button onClick={onGoToNext}>
+        <Button disabled={currentPage === 500} onClick={onGoToNext}>
           <ButtonText>Next</ButtonText>
           <RightArrow />
         </Button>
-        <Button onClick={onGoToLast}>
+        <Button disabled={currentPage === 500} onClick={onGoToLast}>
           <ButtonText>Last</ButtonText>
           <RightArrow />
           <RightArrow mobile="true" />
