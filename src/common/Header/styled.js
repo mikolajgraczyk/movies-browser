@@ -10,6 +10,7 @@ export const Wrapper = styled.header`
     padding: 35px 293px;
     align-content: center;
     color: ${({ theme }) => theme.color.white};
+    width: 100%;
 
     @media(max-width: ${({ theme }) => theme.breakpoint.mobileMax}px){
         height: 142px;
@@ -33,6 +34,7 @@ export const TitleWrapper = styled.div`
 export const StyledVideoIcon = styled(VideoIcon)`
     @media(max-width: ${({ theme }) => theme.breakpoint.mobileMax}px){
         width: 17px;
+        height: 17px;
     }
 `;
 
@@ -122,6 +124,10 @@ export const SearchBar = styled.input`
 
     &::placeholder{
         color: ${({ theme }) => theme.color.waterloo};
+    }
+
+    &:focus{
+        outline: none;
     }
 
     @media(max-width: ${({ theme }) => theme.breakpoint.mobileMax}px){
