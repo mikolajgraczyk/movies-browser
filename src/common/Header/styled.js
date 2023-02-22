@@ -1,23 +1,15 @@
 import styled from 'styled-components';
-import { ReactComponent as VideoIcon } from "./VideoIcon.svg";
-import { ReactComponent as SearchIcon } from "./SearchIcon.svg";
+import { ReactComponent as VideoIcon } from "./images/VideoIcon.svg";
+import { ReactComponent as SearchIcon } from "./images/SearchIcon.svg";
+const bpMobile = ({ theme }) => theme.breakpoint.mobileMax;
 
-export const Wrapper = styled.header`
+export const StyledHeader = styled.header`
     background: ${({ theme }) => theme.color.woodsmoke};
-    height: 94px;
-    display: grid;
-    gap: 80px;
-    grid-template-columns: 1.5fr 1fr 2fr;
-    padding: 35px 16px 35px 16px;
-    align-content: center;
+    padding: 23px 16px;
     color: ${({ theme }) => theme.color.white};
-    width: 100%;
 
-    @media(max-width: ${({ theme }) => theme.breakpoint.mobileMax}px){
-        height: 142px;
-        grid-template-columns: 1fr 1fr;
+    @media(max-width: ${bpMobile}px){
         padding: 16px;
-        gap: 19px;
     }
 `;
 
@@ -25,17 +17,37 @@ export const TitleWrapper = styled.div`
     display: flex;
     gap: 12px;
     align-items: center;
-    justify-self: right;
 
-    @media(max-width: ${({ theme }) => theme.breakpoint.mobileMax}px){
+    @media(max-width: ${bpMobile}px){
         gap: 8px;
-        margin-top: 8px;
-        justify-self: left;
+    }
+`;
+
+export const GridWrapper = styled.div`
+    max-width: 1368px;
+    margin: auto;
+    display: grid;
+    gap: 16px;
+    grid-template-columns: auto minmax(0, 432px);
+
+    @media(max-width: ${bpMobile}px){
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+`;
+
+export const Wrapper = styled.div`
+    display: flex;
+    gap: 80px;
+
+    @media(max-width: ${bpMobile}px){
+        justify-content: space-between;
+        gap: 20px;
     }
 `;
 
 export const StyledVideoIcon = styled(VideoIcon)`
-    @media(max-width: ${({ theme }) => theme.breakpoint.mobileMax}px){
+    @media(max-width: ${bpMobile}px){
         width: 17px;
         height: 17px;
     }
@@ -47,7 +59,7 @@ export const TitleText = styled.div`
     font-size: 0.8125rem;
     font-size: clamp(0.8125rem, 0.675rem + 0.6875vw, 1.5rem);
 
-    @media(max-width: ${({ theme }) => theme.breakpoint.mobileMax}px){
+    @media(max-width: ${bpMobile}px){
         font-size: 13px;
     }
 `;
@@ -55,14 +67,10 @@ export const TitleText = styled.div`
 export const ButtonsWrapper = styled.div`
     display: flex;
     gap: 16px;
-    flex-grow: 1;
-    justify-self: left;
 
-    @media(max-width: ${({ theme }) => theme.breakpoint.mobileMax}px){
+    @media(max-width: ${bpMobile}px){
         gap: 12px;
-        flex-grow: 0;
-        margin-top: 8px;
-        justify-self: right;
+        margin-left: 30px;
     }
 `;
 
@@ -70,36 +78,30 @@ export const HeaderButton = styled.button`
     color: ${({ theme }) => theme.color.white};
     background: none;
     border: none;
+    font-family: poppins;
     /* border: 1px solid ${({ theme }) => theme.color.white}; */
     border-radius: 24px;
     font-size: 14px;
-    font-family: poppins;
     font-weight: 600;
-    padding: 8px 24px;
+    padding: 13.5px 24px;
 
     &:hover{
         cursor: pointer;
     }
 
-    @media(max-width: ${({ theme }) => theme.breakpoint.mobileMax}px){
+    @media(max-width: ${bpMobile}px){
         font-size: 12px;
         padding: 8px 12px;
     }
 `;
 
-export const Form = styled.div`
+export const SearchBar = styled.div`
     display: flex;
     align-items: center;
-
-    @media(max-width: ${({ theme }) => theme.breakpoint.mobileMax}px){
-        grid-column-start: 1;
-        grid-column-end: 3;
-        justify-content: center;
-    }
 `;
 
 export const StyledSearchIcon = styled(SearchIcon)`
-    @media(max-width: ${({ theme }) => theme.breakpoint.mobileMax}px){
+    @media(max-width: ${bpMobile}px){
         width: 16px;
     }
 `;
@@ -112,17 +114,19 @@ export const SearchBarIcon = styled.div`
     border-radius: 33px 0 0 33px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: right;
 
-    @media(max-width: ${({ theme }) => theme.breakpoint.mobileMax}px){
+    @media(max-width: ${bpMobile}px){
         height: 44px;
+        width: 35px;
     }
 `;
 
-export const SearchBar = styled.input`
+export const SearchBarInput = styled.input`
     font-family: poppins;
     height: 48px;
-    width: 432px;
+    width: 100%;
+    padding: 19px;
     border: 1px solid ${({ theme }) => theme.color.mystic};
     border-left: none;
     border-radius: 0 33px 33px 0;
@@ -135,10 +139,11 @@ export const SearchBar = styled.input`
         outline: none;
     }
 
-    @media(max-width: ${({ theme }) => theme.breakpoint.mobileMax}px){
+    @media(max-width: ${bpMobile}px){
         height: 44px;
         width: 288px;
         width: 100%;
+        padding: 10px;
 
         &::placeholder{
             font-size: 13px;
