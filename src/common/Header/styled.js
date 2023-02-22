@@ -4,6 +4,7 @@ import { ReactComponent as SearchIcon } from "./images/SearchIcon.svg";
 const bpMobile = ({ theme }) => theme.breakpoint.mobileMax;
 
 export const StyledHeader = styled.header`
+    font-family: poppins;
     background: ${({ theme }) => theme.color.woodsmoke};
     padding: 23px 16px;
     color: ${({ theme }) => theme.color.white};
@@ -54,7 +55,6 @@ export const StyledVideoIcon = styled(VideoIcon)`
 `;
 
 export const TitleText = styled.div`
-    font-family: poppins;
     font-weight: 500;
     font-size: 0.8125rem;
     font-size: clamp(0.8125rem, 0.675rem + 0.6875vw, 1.5rem);
@@ -78,7 +78,6 @@ export const HeaderButton = styled.button`
     color: ${({ theme }) => theme.color.white};
     background: none;
     border: none;
-    font-family: poppins;
     /* border: 1px solid ${({ theme }) => theme.color.white}; */
     border-radius: 24px;
     font-size: 14px;
@@ -123,7 +122,6 @@ export const SearchBarIcon = styled.div`
 `;
 
 export const SearchBarInput = styled.input`
-    font-family: poppins;
     height: 48px;
     width: 100%;
     padding: 19px;
