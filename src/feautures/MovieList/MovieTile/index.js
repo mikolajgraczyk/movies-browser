@@ -1,5 +1,5 @@
 import Rates from "./Rates";
-import { MovieInfo, Poster, StyledTile, Subtitle, Title, Dummy } from "./styled";
+import { MovieInfo, Poster, StyledMovieTile, Subtitle, Title, Dummy } from "./styled";
 import Tags from "./Tags";
 
 
@@ -7,7 +7,7 @@ export const MovieTile = ({ poster, title, subtitle, rate, votes }) => {
 
     return (
         <>
-            <StyledTile>
+            <StyledMovieTile>
                 <Poster >
                     {poster || <Dummy />}
                 </Poster>
@@ -20,7 +20,7 @@ export const MovieTile = ({ poster, title, subtitle, rate, votes }) => {
                         votes={votes}    
                     />
                 </MovieInfo>
-            </StyledTile>
+            </StyledMovieTile>
 
         </>
     );

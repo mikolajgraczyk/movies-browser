@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { ReactComponent as DummyMovie } from "./video.svg";
 
-export const StyledTile = styled.div`
+export const StyledMovieTile = styled.div`
     display: grid;
     grid-template-columns: 1fr ;
     grid-gap: 16px;
@@ -34,6 +34,7 @@ export const Poster = styled.div`
     height: 434px;
     background-color: #C4C4C4;
     border-radius: 5px;
+    object-fit: cover;
    
     @media (max-width: ${({ theme }) => theme.breakpoint.mobile}px) {
         width: 114px;
@@ -43,10 +44,9 @@ export const Poster = styled.div`
 
 `;
 
-export const Title = styled.h2`
+export const Title = styled.h3`
     margin: 0;
-    color: #18181B;
-    font-family: 'Poppins';
+    color: ${({ theme }) => theme.color.woodsmoke};
     font-style: normal;
     font-weight: 500;
     font-size: 22px;
