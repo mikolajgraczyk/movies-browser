@@ -20,8 +20,10 @@ export const StyledTile = styled.div`
 `;
 
 export const MovieInfo = styled.div`
+    position: relative;
     margin: 0;
     padding: 0;
+    height: 168px;
 `;
 
 export const Poster = styled.div`
