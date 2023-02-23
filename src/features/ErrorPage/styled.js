@@ -42,4 +42,8 @@ export const Button = styled.button`
     border-radius: 5px;
     color: ${({theme}) => theme.color.white};
     background-color: ${({ theme }) => theme.color.scienceBlue};
+
+    &:hover{
+        cursor: pointer;
+    }
 `;
