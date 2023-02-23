@@ -69,7 +69,7 @@ export const Button = styled.button`
   align-items: center;
   gap: 8px;
   font-size: 14px;
-  color: ${({ theme }) => theme.color.woodsmoke};
+  color: ${({ theme }) => theme.color.mineShaft};
   background-color: ${({ theme }) => theme.color.pattensBlue};
   border: none;
   border-radius: 5px;
@@ -78,6 +78,13 @@ export const Button = styled.button`
 
   &:hover {
     opacity: 0.85;
+  }
+
+  &:disabled {
+    background-color: ${({ theme }) => theme.color.mystic};
+    color: ${({ theme }) => theme.color.woodsmoke};
+    cursor: auto;
+    opacity: 1;
   }
 
   @media (max-width: ${bpMobile}px) {
@@ -89,8 +96,18 @@ export const Button = styled.button`
     transform: translateX(-2px);
   }
 
+  &:disabled ${LeftArrow} {
+    transform: none;
+    color: ${({ theme }) => theme.color.waterloo};
+  }
+
   &:hover ${RightArrow} {
     transform: translateX(2px);
+  }
+
+  &:disabled ${RightArrow} {
+    transform: none;
+    color: ${({ theme }) => theme.color.waterloo};
   }
 `;
 
