@@ -18,7 +18,7 @@ export const Tag = styled.span`
     font-size: 14px;
     line-height: 140%;
 
-    @media (max-width: 320px) {
+    @media (max-width: ${({ theme }) => theme.breakpoint.mobile}px) {
         padding: 4px 8px;
         font-size: 10px;
         line-height: 110%;
