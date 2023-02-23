@@ -15,7 +15,6 @@ export const StyledSection = styled.div`
 
 export const Title = styled.h1`
     margin: 0 0 24px 0;
-    width: 100vh;
     color: ${({ theme }) => theme.color.woodsmoke};
     font-weight: 600;
     font-size: 36px;
