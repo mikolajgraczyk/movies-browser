@@ -9,11 +9,13 @@ export const StyledSection = styled.div`
    
     @media (max-width: ${bpMobile}px) {
         padding: 24px 16px 0 16px;
+        max-width: 640px;
   }
 `;
 
 export const Title = styled.h1`
     margin: 0 0 24px 0;
+    width: 100vh;
     color: ${({ theme }) => theme.color.woodsmoke};
     font-weight: 600;
     font-size: 36px;
@@ -21,6 +23,8 @@ export const Title = styled.h1`
 
     @media (max-width: ${bpMobile}px) {
         margin: 0 0 12px 0;
+        max-width: 1368px;
         font-size: 18px;
+
   }
 `;
