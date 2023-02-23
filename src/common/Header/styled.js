@@ -4,7 +4,6 @@ import { ReactComponent as SearchIcon } from "./images/SearchIcon.svg";
 const bpMobile = ({ theme }) => theme.breakpoint.mobileMax;
 
 export const StyledHeader = styled.header`
-    font-family: poppins;
     background: ${({ theme }) => theme.color.woodsmoke};
     padding: 23px 16px;
     color: ${({ theme }) => theme.color.white};
