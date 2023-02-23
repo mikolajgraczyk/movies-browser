@@ -55,7 +55,6 @@ export const StyledVideoIcon = styled(VideoIcon)`
 
 export const TitleText = styled.div`
     font-weight: 500;
-    font-size: 0.8125rem;
     font-size: 24px;
 
     @media(max-width: ${bpMobile}px){
