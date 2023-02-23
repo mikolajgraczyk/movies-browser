@@ -18,7 +18,6 @@ const Header = () => {
     const [input, setInput] = useState();
 
     const onInputChange = ({ target }) => setInput(target.value);
-    const onFormSubmit = event => event.preventDefault();
 
     return (
         <StyledHeader>
@@ -33,7 +32,7 @@ const Header = () => {
                         <HeaderButton>PEOPLE</HeaderButton>
                     </ButtonsWrapper>
                 </Wrapper>
-                <SearchBar onSubmit={onFormSubmit}>
+                <SearchBar>
                     <SearchBarIcon>
                         <StyledSearchIcon />
                     </SearchBarIcon>
