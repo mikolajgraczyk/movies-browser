@@ -11,7 +11,11 @@ export const StyledMovies = styled.div`
         grid-template-columns: auto;
     };
 
-    @media (min-width: 633px) and (max-width: ${({ theme }) => theme.breakpoint.mobile}px) {
+    @media (min-width: 633px) and (max-width: 1020px) {
         grid-template-columns: auto auto;
+    };
+
+    @media (min-width: 1020px) and (max-width: 1370px) {
+        grid-template-columns: auto auto auto;
     };
 `;
