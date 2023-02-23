@@ -1,10 +1,10 @@
 import { MovieTile } from "./MovieTile";
-import { StyledMovies } from "./styled";
+import { StyledMovieList } from "./styled";
 
 const MovieList = () => {
 
     return (
-        <StyledMovies>
+        <StyledMovieList>
             <MovieTile
                 poster=""
                 title="Mulan: Forever and Ever"
@@ -61,7 +61,7 @@ const MovieList = () => {
                 // rate=""
                 // votes=""
             />
-        </StyledMovies>
+        </StyledMovieList>
     );
 };
 
