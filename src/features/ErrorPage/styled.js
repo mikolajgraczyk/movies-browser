@@ -41,7 +41,7 @@ export const ErrorText = styled.div`
     }
 `;
 
-export const ErrorDescription = styled.div`
+export const ErrorDescription = styled.p`
     font-size: 22px;
     font-weight: 500;
     line-height: 130%;
