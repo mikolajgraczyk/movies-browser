@@ -9,7 +9,7 @@ import {
 } from "./styled";
 import Tags from "./Tags";
 
-export const MovieTile = ({ poster, title, subtitle, rate, votes }) => {
+const MovieTile = ({ poster, title, subtitle, rate, votes }) => {
   return (
     <>
       <StyledMovieTile>
@@ -24,3 +24,5 @@ export const MovieTile = ({ poster, title, subtitle, rate, votes }) => {
     </>
   );
 };
+
+export default MovieTile;
