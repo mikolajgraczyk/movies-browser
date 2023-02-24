@@ -15,7 +15,7 @@ export const SectionList = styled.ul`
 
   @media (max-width: ${bpMobile}px) {
     gap: 16px;
-    grid-template-columns: repeat(auto-fill, minmax(0, 100%));
+    grid-template-columns: repeat(auto-fill, 100%);
   }
 `;
 
