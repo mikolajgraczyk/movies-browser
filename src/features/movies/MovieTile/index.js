@@ -9,7 +9,7 @@ import {
 } from "./styled";
 import Tags from "./Tags";
 
-const MovieTile = ({ poster, title, subtitle, score, votes }) => {
+const MovieTile = ({ poster, title, subtitle, score, votes, genreIds }) => {
   return (
     <>
       <StyledMovieTile>
@@ -21,10 +21,13 @@ const MovieTile = ({ poster, title, subtitle, score, votes }) => {
         ) : (
           <Dummy />
         )}
+
         <MovieInfo>
-          <Title>{title}</Title>
-          <Subtitle>{subtitle.slice(0, 4)}</Subtitle>
-          <Tags />
+          <div>
+            <Title>{title}</Title>
+            <Subtitle>{subtitle.slice(0, 4)}</Subtitle>
+            <Tags genreIds={genreIds} />
+          </div>
           <Rates score={score} votes={votes} />
         </MovieInfo>
       </StyledMovieTile>

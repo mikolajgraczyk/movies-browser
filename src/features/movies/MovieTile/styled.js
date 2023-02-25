@@ -6,26 +6,30 @@ const bpMobile = ({ theme }) => theme.breakpoint.mobile;
 
 export const StyledMovieTile = styled(Link)`
   text-decoration: none;
-  display: grid;
-  grid-template-columns: 1fr;
+  display: flex;
+  flex-direction: column;
   grid-gap: 16px;
   padding: 16px;
   background-color: ${({ theme }) => theme.color.white};
   border-radius: 5px;
   box-shadow: 0px 4px 12px rgba(186, 199, 213, 0.5);
-  height: 650px;
+  height: 100%;
 
   @media (max-width: ${bpMobile}px) {
-    grid-template-columns: auto 1fr;
-    height: 201px;
+    flex-direction: row;
+    align-items: center;
   }
 `;
 
 export const MovieInfo = styled.div`
-  position: relative;
-  margin: 0;
-  padding: 0;
-  height: 168px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+
+  @media (max-width: ${bpMobile}px) {
+    display: block;
+  }
 `;
 
 export const Poster = styled.img`
