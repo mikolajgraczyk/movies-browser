@@ -1,9 +1,9 @@
 import styled from "styled-components";
 import { ReactComponent as Star } from "./star.svg";
 
+const bpMobile = ({ theme }) => theme.breakpoint.mobile;
+
 export const StyledRates = styled.div`
-  position: absolute;
-  bottom: 0;
   margin: 10px 0 0;
   height: 24px;
   display: flex;
@@ -13,7 +13,7 @@ export const StyledRates = styled.div`
   font-size: 16px;
   line-height: 150%;
 
-  @media (max-width: ${({ theme }) => theme.breakpoint.mobile}px) {
+  @media (max-width: ${bpMobile}px) {
     position: static;
     gap: 7px;
     font-size: 13px;
@@ -35,7 +35,7 @@ export const StyledStar = styled(Star)`
   width: 24px;
   height: 21px;
 
-  @media (max-width: ${({ theme }) => theme.breakpoint.mobile}px) {
+  @media (max-width: ${bpMobile}px) {
     width: 16px;
     height: 16px;
   }
