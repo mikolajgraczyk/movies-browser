@@ -15,14 +15,11 @@ const PopularMoviesPage = () => {
       .then((data) => setPopularMovies(data.results));
   }, []);
 
-  const slicedPopularMovies = popularMovies.slice(0, 8);
-  console.log(slicedPopularMovies);
-
   return (
     <Container>
       <TilesSection title="Popular movies">
         {popularMovies &&
-          slicedPopularMovies.map((movie) => (
+          popularMovies.map((movie) => (
             <li key={movie.id}>
               <MovieTile
                 title={movie.title}
