@@ -1,19 +1,16 @@
 import Pagination from "./common/Pagination";
-import Section from "./common/Section";
-import MovieList from "./feautures/MovieList";
+import PopularMoviesPage from "./features/movies/PopularMoviesPage";
 import Header from "./common/Header";
 import { HashRouter } from "react-router-dom";
+import { Main } from "./common/Main";
 
 function App() {
   return (
     <HashRouter>
       <Header />
-      <Section
-        title="Popular movies"
-        body={
-          <MovieList />
-        }
-      />   
+      <Main>
+        <PopularMoviesPage />
+      </Main>
       <Pagination />
     </HashRouter>
   );
