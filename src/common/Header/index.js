@@ -6,7 +6,7 @@ import {
     StyledVideoIcon,
     TitleWrapper,
     TitleText,
-    HeaderButton,
+    StyledNavLink,
     StyledSearchIcon,
     SearchBar,
     SearchBarIcon,
@@ -28,8 +28,8 @@ const Header = () => {
                         <TitleText>Movies Browser</TitleText>
                     </TitleWrapper>
                     <ButtonsWrapper>
-                        <HeaderButton>MOVIES</HeaderButton>
-                        <HeaderButton>PEOPLE</HeaderButton>
+                        <StyledNavLink to="/movies">MOVIES</StyledNavLink>
+                        <StyledNavLink to="/people">PEOPLE</StyledNavLink>
                     </ButtonsWrapper>
                 </Wrapper>
                 <SearchBar>
