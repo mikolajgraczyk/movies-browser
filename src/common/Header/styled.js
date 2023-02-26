@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { NavLink } from "react-router-dom";
 import { ReactComponent as VideoIcon } from "./images/VideoIcon.svg";
 import { ReactComponent as SearchIcon } from "./images/SearchIcon.svg";
 const bpMobile = ({ theme }) => theme.breakpoint.mobile;
@@ -75,15 +76,19 @@ export const ButtonsWrapper = styled.div`
   }
 `;
 
-export const HeaderButton = styled.button`
+export const StyledNavLink = styled(NavLink)`
   color: ${({ theme }) => theme.color.white};
   background: none;
   border: none;
-  /* border: 1px solid ${({ theme }) => theme.color.white}; */
   border-radius: 24px;
   font-size: 14px;
   font-weight: 600;
   padding: 13.5px 24px;
+  text-decoration: none;
+
+  &.active{
+    border: 1px solid ${({ theme }) => theme.color.white};
+  }
 
   &:hover {
     cursor: pointer;
