@@ -9,9 +9,11 @@ export const StyledPagination = styled.section`
   align-items: center;
   justify-content: center;
   gap: 24px;
+  margin: 0 0 103px;
 
   @media (max-width: ${bpMobile}px) {
     gap: 8px;
+    margin: 0 0 31px;
   }
 `;
 
