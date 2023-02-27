@@ -6,21 +6,21 @@ import Header from "./common/Header";
 import { Main } from "./common/Main";
 import { Routes, Route, Navigate } from "react-router-dom";
 
-
 function App() {
   return (
     <>
       <Header />
       <Main>
         <Routes>
-          <Route path="/movies" element={
-            <PopularMoviesPage />
-          } />
-          <Route path="/people" element={
-            <TilesSection title="Popular people">
-              <ActorTile />
-            </TilesSection>
-          } />
+          <Route path="/movies" element={<PopularMoviesPage />} />
+          <Route
+            path="/people"
+            element={
+              <TilesSection title="Popular people">
+                <ActorTile />
+              </TilesSection>
+            }
+          />
           <Route path="/" element={<Navigate to="/movies" />} />
         </Routes>
       </Main>
