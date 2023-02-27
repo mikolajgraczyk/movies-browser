@@ -4,7 +4,7 @@ const TilesSection = ({ title, children }) => {
   return (
     <StyledTilesSection>
       <SectionTitle>{title}</SectionTitle>
-      <SectionList>{children}</SectionList>
+      {children}
     </StyledTilesSection>
   );
 };
