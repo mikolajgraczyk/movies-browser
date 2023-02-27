@@ -1,18 +1,21 @@
 import { useEffect, useState } from "react";
 import { Container } from "../../../common/Container";
 import TilesSection from "../../../common/TilesSection";
+import { getPopularData } from "../../getPopularData";
 import MovieTile from "../MovieTile";
 
 const PopularMoviesPage = () => {
-  const base_url = "https://api.themoviedb.org/3";
-  const api_key = "api_key=0e017d1cf3aa44c76887c24c592892f0";
-
   const [popularMovies, setPopularMovies] = useState([]);
 
   useEffect(() => {
-    fetch(`${base_url}/discover/movie?sort_by=popularity.desc&${api_key}`)
-      .then((response) => response.json())
-      .then((data) => setPopularMovies(data.results));
+    (async () => {
+      try {
+        const fetchMovies = await getPopularData("movie");
+        setPopularMovies(fetchMovies);
+      } catch (error) {
+        console.error(error);
+      }
+    })();
   }, []);
 
   return (
