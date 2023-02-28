@@ -1,11 +1,10 @@
 import { useSelector } from "react-redux";
-import { selectPeople, selectPageStatus } from "../peopleSlice";
+import { selectPageStatus } from "../peopleSlice";
 import { Loading } from "../../../common/Loading";
 import ErrorPage from "../../../common/ErrorPage";
 import PopularPeople from "./PopularPeople";
 
 const PopularPeoplePage = () => {
-  const people = useSelector(selectPeople);
   const pageStatus = useSelector(selectPageStatus);
   console.log(pageStatus);
 
