@@ -71,6 +71,6 @@ export const DummyActor = styled.div`
   background-position: center;
 
   @media (max-width: ${bpMobile}px) {
-    height: 178px;
+    width: 100%;
   }
 `;
