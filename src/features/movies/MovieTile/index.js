@@ -19,7 +19,9 @@ const MovieTile = ({ poster, title, subtitle, score, votes, genreIds }) => {
             alt={title}
           />
         ) : (
-          <Dummy />
+          <div>
+            <Dummy />
+          </div>
         )}
 
         <MovieInfo>

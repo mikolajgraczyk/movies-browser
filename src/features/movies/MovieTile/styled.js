@@ -81,8 +81,9 @@ export const Subtitle = styled.p`
 `;
 
 export const Dummy = styled.div`
-  height: 434px;
-
+  max-height: 750px;
+  max-width: 500px;
+  aspect-ratio: 2 / 3;
   background-color: ${({ theme }) => theme.color.silver};
   border-radius: 5px;
   object-fit: cover;
@@ -93,7 +94,6 @@ export const Dummy = styled.div`
 
   @media (max-width: ${bpMobile}px) {
     width: 114px;
-    height: 169px;
     background-size: auto;
     flex-shrink: 0;
   }
