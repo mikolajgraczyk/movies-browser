@@ -6,28 +6,34 @@ const bpMobile = ({ theme }) => theme.breakpoint.mobile;
 
 export const StyledActorTile = styled(Link)`
   display: block;
-  height: 339px;
-  width: 208px;
   padding: 16px;
   text-align: center;
   text-decoration: none;
   background-color: ${({ theme }) => theme.color.white};
+  transition: all 170ms cubic-bezier(0.45, 0.05, 0.55, 0.95);
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0px 6px 18px 2px #ced7d9;
+  }
 
   @media (max-width: ${bpMobile}px) {
-    height: 245px;
-    width: 136px;
     padding: 8px;
+
+    &:hover {
+      transform: none;
+      box-shadow: none;
+    }
   }
 `;
 
 export const ActorImage = styled.img`
-  height: 231px;
   width: 100%;
   object-fit: cover;
   border-radius: 5px;
 
   @media (max-width: ${bpMobile}px) {
-    height: 178px;
+    
   }
 `;
 
