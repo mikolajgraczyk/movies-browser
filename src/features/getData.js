@@ -10,3 +10,11 @@ export const getPopularData = async (dataName, page = 1) => {
 
   return data.results;
 };
+
+export const getGenreName = async () => {
+  const { data } = await axios.get(
+    `${baseUrl}/genre/movie/list?${apiKey}&language=en-US`
+  );
+
+  return data.genres;
+};
