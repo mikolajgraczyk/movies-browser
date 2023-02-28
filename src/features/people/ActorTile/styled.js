@@ -33,7 +33,6 @@ export const ActorImage = styled.img`
   border-radius: 5px;
 
   @media (max-width: ${bpMobile}px) {
-    
   }
 `;
 
@@ -61,8 +60,9 @@ export const Role = styled.div`
 `;
 
 export const DummyActor = styled.div`
-  height: 231px;
-  width: 100%;
+  max-height: 513px;
+  max-width: 342px;
+  aspect-ratio: 2 / 3;
   object-fit: cover;
   border-radius: 5px;
   background-color: ${({ theme }) => theme.color.silver};
