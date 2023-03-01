@@ -32,6 +32,6 @@ function* fetchMoviesHandler() {
 }
 
 export function* moviesSaga() {
-  yield call(fetchGenresHandler);
-  yield call(fetchMoviesHandler);
+  yield takeLatest(fetchGenres.type, fetchGenresHandler);
+  yield takeLatest(fetchMovies.type, fetchMoviesHandler);
 }

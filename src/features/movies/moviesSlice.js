@@ -20,7 +20,8 @@ const moviesSlice = createSlice({
     setLoadingToFail: (state) => {
       state.loadingStatus = "fail";
     },
-    fetchMovies: () => { },
+    fetchMovies: () => {},
+    fetchGenres: () => {},
   },
 });
 
@@ -30,9 +31,11 @@ export const {
   setLoadingToFail,
   setGenres,
   fetchMovies,
+  fetchGenres,
 } = moviesSlice.actions;
 export const selectMoviesState = (state) => state.movies;
 export const selectMovies = (state) => selectMoviesState(state).movies;
 export const selectGenres = (state) => selectMoviesState(state).genres;
-export const selectLoadingStatus = (state) => selectMoviesState(state).loadingStatus;
+export const selectLoadingStatus = (state) =>
+  selectMoviesState(state).loadingStatus;
 export default moviesSlice.reducer;

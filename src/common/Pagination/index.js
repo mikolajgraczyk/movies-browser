@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { fetchMovies } from "../../features/movies/moviesSlice";
+import { fetchMovies, fetchGenres } from "../../features/movies/moviesSlice";
 import { fetchPeople } from "../../features/people/peopleSlice";
 import {
   StyledPagination,
@@ -20,6 +20,7 @@ const Pagination = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    dispatch(fetchGenres());
     dispatch(fetchMovies());
     dispatch(fetchPeople());
   }, []);
