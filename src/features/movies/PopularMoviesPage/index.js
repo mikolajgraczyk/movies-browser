@@ -1,12 +1,19 @@
+import { useEffect } from "react";
 import { Container } from "../../../common/Container";
 import { GridList } from "../../../common/GridList";
 import TilesSection from "../../../common/TilesSection";
 import MovieTile from "../MovieTile";
-import { useSelector } from "react-redux";
-import { selectMovies } from "../moviesSlice";
+import { useSelector, useDispatch } from "react-redux";
+import { selectMovies, fetchGenres, fetchMovies } from "../moviesSlice";
 
 const PopularMoviesPage = () => {
   const movies = useSelector(selectMovies);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchGenres());
+    dispatch(fetchMovies());
+  }, []);
 
   return (
     <Container>

@@ -1,12 +1,18 @@
+import { useEffect } from "react";
 import { Container } from "../../../common/Container";
 import TilesSection from "../../../common/TilesSection";
 import ActorTile from "../ActorTile/index";
-import { useSelector } from "react-redux";
-import { selectPeople } from "../peopleSlice";
+import { useSelector, useDispatch } from "react-redux";
+import { selectPeople, fetchPeople } from "../peopleSlice";
 import { GridList } from "../../../common/GridList";
 
 const PopularPeoplePage = () => {
   const people = useSelector(selectPeople);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchPeople());
+  }, []);
 
   return (
     <Container>
