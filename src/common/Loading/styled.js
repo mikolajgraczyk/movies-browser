@@ -1,6 +1,11 @@
 import styled from "styled-components";
 import { ReactComponent as svgSpinner } from "./images/spinner.svg";
 
+export const StyledLoading = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
 export const StyledSpinner = styled(svgSpinner)`
   width: 91px;
   height: 91px;
