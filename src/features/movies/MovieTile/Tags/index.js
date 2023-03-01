@@ -1,19 +1,14 @@
 import { useState, useEffect } from "react";
 import { StyledTags, Tag } from "./styled";
-import { selectGenres } from "../../moviesSlice";
+import {
+  selectGenres,
+  selectedGenreByIds,
+  setMovieGenreId,
+} from "../../moviesSlice";
 import { useSelector } from "react-redux";
 
 const Tags = ({ genreIds }) => {
-  const [genres, setGenres] = useState([]);
-  const genreNames = useSelector(selectGenres);
-
-  useEffect(() => {
-      setGenres(
-        genreIds.map((genreId) => {
-          return genreNames.find((genre) => genre.id === genreId);
-        })
-      );
-  }, []);
+  const genres = useSelector(state => selectedGenreByIds(state, genreIds));
 
   return (
     <StyledTags>
