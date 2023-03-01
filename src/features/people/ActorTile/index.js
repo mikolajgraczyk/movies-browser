@@ -9,7 +9,16 @@ import {
 const ActorTile = ({ poster, name, role }) => {
   return (
     <StyledActorTile>
-      {poster ? <ActorImage src={`https://image.tmdb.org/t/p/w342${poster}`} alt={name} /> : <DummyActor />}
+      {poster ? (
+        <ActorImage
+          src={`https://image.tmdb.org/t/p/w342${poster}`}
+          alt={name}
+        />
+      ) : (
+        <div>
+          <DummyActor />
+        </div>
+      )}
       <ActorName>{name}</ActorName>
       <Role>{role}</Role>
     </StyledActorTile>

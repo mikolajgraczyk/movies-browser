@@ -15,11 +15,13 @@ const MovieTile = ({ poster, title, subtitle, score, votes, genreIds }) => {
       <StyledMovieTile>
         {poster ? (
           <Poster
-            src={`https://image.tmdb.org/t/p/w342${poster}`}
+            src={`https://image.tmdb.org/t/p/w500${poster}`}
             alt={title}
           />
         ) : (
-          <Dummy />
+          <div>
+            <Dummy />
+          </div>
         )}
 
         <MovieInfo>
