@@ -1,14 +1,9 @@
-import { useState, useEffect } from "react";
 import { StyledTags, Tag } from "./styled";
-import {
-  selectGenres,
-  selectedGenreByIds,
-  setMovieGenreId,
-} from "../../moviesSlice";
+import { selectedGenreByIds } from "../../moviesSlice";
 import { useSelector } from "react-redux";
 
 const Tags = ({ genreIds }) => {
-  const genres = useSelector(state => selectedGenreByIds(state, genreIds));
+  const genres = useSelector((state) => selectedGenreByIds(state, genreIds));
 
   return (
     <StyledTags>

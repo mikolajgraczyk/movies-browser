@@ -8,14 +8,12 @@ const moviesSlice = createSlice({
     fetchingStatus: "loading",
   },
   reducers: {
-    setMovies: (state, { payload: movies }) => {
-      state.movies = movies;
-    },
     setGenres: (state, { payload: genres }) => {
       state.genres = genres;
     },
-    setFetchingToSucces: (state) => {
+    setFetchingToSucces: (state, { payload: movies }) => {
       state.fetchingStatus = "success";
+      state.movies = movies;
     },
     setFetchingToFail: (state) => {
       state.fetchingStatus = "fail";
@@ -41,9 +39,15 @@ export const selectFetchingStatus = (state) =>
   selectMoviesState(state).fetchingStatus;
 
 export const selectedGenreByIds = (state, genreIds) => {
+  const genres = selectGenres(state);
+
+  if (genres.length > 1) {
     return genreIds.map((genreId) => {
-    return selectGenres(state).find((genre) => genre.id === genreId);
-  });
+      return selectGenres(state).find((genre) => genre.id === genreId);
+    });
+  }
+
+  return genres;
 };
 
 export default moviesSlice.reducer;
