@@ -10,7 +10,7 @@ export const StyledSpinner = styled(svgSpinner)`
   width: 91px;
   height: 91px;
   color: #18181b;
-  animation: rotation 5s linear infinite;
+  animation: rotation 1s linear infinite;
   @keyframes rotation {
     0% {
       transform: rotate(0deg);
