@@ -6,9 +6,9 @@ import {
   DummyActor,
 } from "./styled";
 
-const ActorTile = ({ poster, name, role }) => {
+const ActorTile = ({ poster, name, role, id }) => {
   return (
-    <StyledActorTile>
+    <StyledActorTile to={`/people/${id}`}>
       {poster ? (
         <ActorImage
           src={`https://image.tmdb.org/t/p/w342${poster}`}

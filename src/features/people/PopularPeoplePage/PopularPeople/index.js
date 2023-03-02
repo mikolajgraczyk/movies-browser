@@ -13,11 +13,12 @@ const PopularPeople = () => {
       <TilesSection title="Popular people">
         <GridList popularPeople>
           {people &&
-            people.map(person => (
+            people.map((person) => (
               <li key={person.id}>
                 <ActorTile
                   poster={person.profile_path}
                   name={person.name}
+                  id={person.id}
                 />
               </li>
             ))}
