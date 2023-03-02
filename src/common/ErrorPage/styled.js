@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { ReactComponent as ErrorIcon } from "./ErrorIcon.svg";
+import { ReactComponent as ErrorIcon } from "./images/ErrorIcon.svg";
 
 const bpMobile = ({ theme }) => theme.breakpoint.mobile;
 
