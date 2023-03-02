@@ -22,5 +22,6 @@ const peopleSlice = createSlice({
 
 export const { setPeople, setLoadingToSucces, setLoadingToFail, fetchPeople } = peopleSlice.actions;
 export const selectPeopleState = state => state.people;
-export const selectPeople = state => selectPeopleState(state).people; 
+export const selectPeople = state => selectPeopleState(state).people;
+export const selectPageStatus = state => selectPeopleState(state).loadingStatus;
 export default peopleSlice.reducer;

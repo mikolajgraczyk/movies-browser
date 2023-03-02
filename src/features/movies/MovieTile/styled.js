@@ -8,16 +8,27 @@ export const StyledMovieTile = styled(Link)`
   text-decoration: none;
   display: flex;
   flex-direction: column;
-  grid-gap: 16px;
+  gap: 16px;
   padding: 16px;
   background-color: ${({ theme }) => theme.color.white};
   border-radius: 5px;
   box-shadow: 0px 4px 12px rgba(186, 199, 213, 0.5);
   height: 100%;
+  transition: all 170ms cubic-bezier(0.45, 0.05, 0.55, 0.95);
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0px 8px 20px 5px #ced7d9;
+  }
 
   @media (max-width: ${bpMobile}px) {
     flex-direction: row;
     align-items: center;
+
+    &:hover {
+      transform: none;
+      box-shadow: none;
+    }
   }
 `;
 
@@ -33,14 +44,11 @@ export const MovieInfo = styled.div`
 `;
 
 export const Poster = styled.img`
-  width: 292px;
-  height: 434px;
   border-radius: 5px;
   object-fit: cover;
 
   @media (max-width: ${bpMobile}px) {
-    width: 114px;
-    height: 169px;
+    max-width: 114px;
     flex-shrink: 0;
   }
 `;
@@ -73,8 +81,9 @@ export const Subtitle = styled.p`
 `;
 
 export const Dummy = styled.div`
-  width: 292px;
-  height: 434px;
+  max-height: 750px;
+  max-width: 500px;
+  aspect-ratio: 2 / 3;
   background-color: ${({ theme }) => theme.color.silver};
   border-radius: 5px;
   object-fit: cover;
@@ -85,7 +94,6 @@ export const Dummy = styled.div`
 
   @media (max-width: ${bpMobile}px) {
     width: 114px;
-    height: 169px;
     background-size: auto;
     flex-shrink: 0;
   }

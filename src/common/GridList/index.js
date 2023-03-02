@@ -14,19 +14,23 @@ export const GridList = styled.ul`
     gap: 16px;
   }
 
-  ${({ popularPeople }) => popularPeople && css`
-    grid-template-columns: repeat(auto-fill, 208px);
+  ${({ popularPeople }) =>
+    popularPeople &&
+    css`
+      grid-template-columns: repeat(auto-fill, minmax(208px, 1fr));
 
-    @media (max-width: ${bpMobile}px) {
-        grid-template-columns: repeat(auto-fill, 136px);
-    }
-  `}
+      @media (max-width: ${bpMobile}px) {
+        grid-template-columns: repeat(auto-fill, minmax(136px, 1fr));
+      }
+    `}
 
-  ${({ popularMovies }) => popularMovies && css`
-    grid-template-columns: repeat(auto-fill, 324px);
+  ${({ popularMovies }) =>
+    popularMovies &&
+    css`
+      grid-template-columns: repeat(auto-fill, minmax(324px, 1fr));
 
-    @media (max-width: ${bpMobile}px) {
-        grid-template-columns: 1fr;
-    }
-  `}
+      @media (max-width: ${bpMobile}px) {
+        grid-template-columns: repeat(auto-fill, minmax(288px, 1fr));
+      }
+    `}
 `;
