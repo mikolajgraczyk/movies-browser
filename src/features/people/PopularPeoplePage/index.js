@@ -6,7 +6,6 @@ import PopularPeople from "./PopularPeople";
 
 const PopularPeoplePage = () => {
   const pageStatus = useSelector(selectPageStatus);
-  console.log(pageStatus);
 
   return {
     loading: <Loading />,

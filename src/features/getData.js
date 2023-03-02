@@ -17,10 +17,18 @@ export const getPersonById = async (id) => {
   return data;
 };
 
-export const getCombinedCredits = async (id) => {
-  const { data } = await axios.get(
+export const getPersonData = async (id) => {
+  const { data: infoRequest } = await axios.get(
+    `${baseUrl}/person/${id}?${apiKey}`
+  );
+  const { data: creditsRequest } = await axios.get(
     `${baseUrl}/person/${id}/tv_credits?${apiKey}&language=en-US`
   );
 
-  return data;
+  const [personInfo, personCredits] = await axios.all([
+    infoRequest,
+    creditsRequest,
+  ]);
+
+  return [personInfo, personCredits];
 };

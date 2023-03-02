@@ -4,34 +4,29 @@ const actorSlice = createSlice({
   name: "actor",
   initialState: {
     actorDetails: {},
-    credits: [],
     status: "loading",
   },
   reducers: {
-    fetchActorDetails: () => {},
+    fetchActorDetails: (state) => {
+      state.status = "loading";
+    },
     fetchActorDetailsSuccess: (state, { payload: actorDetails }) => {
       state.actorDetails = actorDetails;
-    },
-    fetchActorCredits: () => {},
-    fetchActorCreditsSuccess: (state, { payload }) => {
-      state.credits = payload;
-    },
-    fetchActorDataSuccess: (state) => {
       state.status = "success";
+    },
+    fetchActorDetailsFail: (state) => {
+      state.status = "fail";
     },
   },
 });
 
-export const {
-  fetchActorDetails,
-  fetchActorDetailsSuccess,
-  fetchActorCredits,
-  fetchActorCreditsSuccess,
-  fetchActorDataSuccess,
-} = actorSlice.actions;
+export const { fetchActorDetails, fetchActorDetailsSuccess } =
+  actorSlice.actions;
 
 const selectActorState = (state) => state.actor;
 export const selectActorDetails = (state) =>
   selectActorState(state).actorDetails;
-export const selectCredits = (state) => selectActorState(state).credits;
+export const selectActorInfo = (state) => selectActorDetails(state)[0];
+export const selectActorPageStatus = (state) => selectActorState(state).status;
+
 export default actorSlice.reducer;
