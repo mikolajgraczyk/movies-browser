@@ -1,7 +1,4 @@
-import { useState, useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { fetchGenres, fetchMovies } from "../../features/movies/moviesSlice";
-import { fetchPeople } from "../../features/people/peopleSlice";
+import { useState } from "react";
 import {
   StyledPagination,
   ButtonsWrapper,
@@ -16,13 +13,6 @@ import {
 
 const Pagination = () => {
   const [currentPage, setCurrentPage] = useState(1);
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(fetchGenres());
-    dispatch(fetchMovies());
-    dispatch(fetchPeople());
-  }, []);
 
   const onGoToFirst = () => {
     if (currentPage !== 1) {
