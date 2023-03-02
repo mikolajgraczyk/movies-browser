@@ -1,5 +1,5 @@
 import { all, call, delay, put, takeLatest } from "redux-saga/effects";
-import { getCombinedCredits, getPersonById } from "../../getPopularData";
+import { getCombinedCredits, getPersonById } from "../../getData";
 import {
   fetchActorCredits,
   fetchActorCreditsSuccess,

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Container } from "../../../common/Container";
 import { GridList } from "../../../common/GridList";
 import TilesSection from "../../../common/TilesSection";
-import { getPopularData } from "../../getPopularData";
+import { getPopularData } from "../../getData";
 import MovieTile from "../MovieTile";
 
 const PopularMoviesPage = () => {

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router";
-import { getPersonById } from "../../../getPopularData";
+import { getPersonById } from "../../../getData";
 import {
   fetchActorCredits,
   fetchActorDetails,

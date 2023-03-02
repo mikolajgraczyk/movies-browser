@@ -1,5 +1,5 @@
 import { call, put, delay } from "redux-saga/effects";
-import { getPopularData } from "../getPopularData";
+import { getPopularData } from "../getData";
 import { setPeople, setLoadingToSucces, setLoadingToFail } from "./peopleSlice";
 
 function* fetchPeopleHandler() {

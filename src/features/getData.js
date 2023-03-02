@@ -19,7 +19,7 @@ export const getPersonById = async (id) => {
 
 export const getCombinedCredits = async (id) => {
   const { data } = await axios.get(
-    `${baseUrl}/person/${id}/combined_credits?${apiKey}&language=en-US`
+    `${baseUrl}/person/${id}/tv_credits?${apiKey}&language=en-US`
   );
 
   return data;
