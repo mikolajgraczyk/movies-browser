@@ -1,45 +1,17 @@
-import { useEffect, useState } from "react";
-import { Container } from "../../../common/Container";
-import { GridList } from "../../../common/GridList";
-import TilesSection from "../../../common/TilesSection";
-import { getPopularData } from "../../getData";
-import MovieTile from "../MovieTile";
+import { useSelector } from "react-redux";
+import { selectFetchingStatus } from "../moviesSlice";
+import { Loading } from "../../../common/Loading";
+import ErrorPage from "../../../common/ErrorPage";
+import PopularMovies from "./PopularMovies";
 
 const PopularMoviesPage = () => {
-  const [popularMovies, setPopularMovies] = useState([]);
+  const fetchingStatus = useSelector(selectFetchingStatus);
 
-  useEffect(() => {
-    (async () => {
-      try {
-        const fetchMovies = await getPopularData("movie");
-        setPopularMovies(fetchMovies);
-      } catch (error) {
-        console.error(error);
-      }
-    })();
-  }, []);
-
-  return (
-    <Container>
-      <TilesSection title="Popular movies">
-        <GridList popularMovies>
-          {popularMovies &&
-            popularMovies.map((movie) => (
-              <li key={movie.id}>
-                <MovieTile
-                  title={movie.title}
-                  subtitle={movie.release_date}
-                  poster={movie.poster_path}
-                  score={movie.vote_average}
-                  votes={movie.vote_count}
-                  genreIds={movie.genre_ids}
-                />
-              </li>
-            ))}
-        </GridList>
-      </TilesSection>
-    </Container>
-  );
+  return {
+    loading: <Loading />,
+    success: <PopularMovies />,
+    fail: <ErrorPage />,
+  }[fetchingStatus];
 };
 
 export default PopularMoviesPage;
