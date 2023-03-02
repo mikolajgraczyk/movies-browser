@@ -2,8 +2,8 @@ import { call, put, delay, takeLatest } from "redux-saga/effects";
 import { getPopularData } from "../getData";
 import {
   setPeople,
-  setLoadingToSucces,
-  setLoadingToFail,
+  setFetchingToSucces,
+  setFetchingToFail,
   fetchPeople,
 } from "./peopleSlice";
 
@@ -12,10 +12,10 @@ function* fetchPeopleHandler() {
     const people = yield call(getPopularData, "person");
     yield put(setPeople(people));
     yield delay(1000);
-    yield put(setLoadingToSucces());
+    yield put(setFetchingToSucces());
   } catch (error) {
     yield delay(1000);
-    yield put(setLoadingToFail());
+    yield put(setFetchingToFail());
   }
 }
 
