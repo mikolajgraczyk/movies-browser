@@ -1,30 +1,26 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { Container } from "../../../common/Container";
 import { GridList } from "../../../common/GridList";
 import TilesSection from "../../../common/TilesSection";
-import { getPopularData } from "../../getPopularData";
 import MovieTile from "../MovieTile";
+import { useSelector, useDispatch } from "react-redux";
+import { selectMovies, fetchGenres, fetchMovies } from "../moviesSlice";
 
 const PopularMoviesPage = () => {
-  const [popularMovies, setPopularMovies] = useState([]);
+  const movies = useSelector(selectMovies);
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    (async () => {
-      try {
-        const fetchMovies = await getPopularData("movie");
-        setPopularMovies(fetchMovies);
-      } catch (error) {
-        console.error(error);
-      }
-    })();
+    dispatch(fetchGenres());
+    dispatch(fetchMovies());
   }, []);
 
   return (
     <Container>
       <TilesSection title="Popular movies">
         <GridList popularMovies>
-          {popularMovies &&
-            popularMovies.map((movie) => (
+          {movies &&
+            movies.map((movie) => (
               <li key={movie.id}>
                 <MovieTile
                   title={movie.title}

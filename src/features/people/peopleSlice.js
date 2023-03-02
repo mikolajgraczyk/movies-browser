@@ -16,10 +16,11 @@ const peopleSlice = createSlice({
         setLoadingToFail: state => {
             state.loadingStatus = "fail";
         },
+        fetchPeople: () => { },
     },
 });
 
-export const { setPeople, setLoadingToSucces, setLoadingToFail } = peopleSlice.actions;
+export const { setPeople, setLoadingToSucces, setLoadingToFail, fetchPeople } = peopleSlice.actions;
 export const selectPeopleState = state => state.people;
 export const selectPeople = state => selectPeopleState(state).people;
 export const selectPageStatus = state => selectPeopleState(state).loadingStatus;
