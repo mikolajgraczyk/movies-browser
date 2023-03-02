@@ -10,3 +10,17 @@ export const getPopularData = async (dataName, page = 1) => {
 
   return data.results;
 };
+
+export const getPersonById = async (id) => {
+  const { data } = await axios.get(`${baseUrl}/person/${id}?${apiKey}`);
+
+  return data;
+};
+
+export const getCombinedCredits = async (id) => {
+  const { data } = await axios.get(
+    `${baseUrl}/person/${id}/combined_credits?${apiKey}&language=en-US`
+  );
+
+  return data;
+};
