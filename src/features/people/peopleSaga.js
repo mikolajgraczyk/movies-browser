@@ -11,10 +11,10 @@ function* fetchPeopleHandler() {
   try {
     const people = yield call(getPopularData, "person");
     yield put(setPeople(people));
-    yield delay(1000);
+    yield delay(500);
     yield put(setFetchingToSucces());
   } catch (error) {
-    yield delay(1000);
+    yield delay(500);
     yield put(setFetchingToFail());
   }
 }

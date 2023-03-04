@@ -21,10 +21,10 @@ function* fetchGenresHandler() {
 function* fetchMoviesHandler() {
   try {
     const movies = yield call(getPopularData, "movie");
-    yield delay(1000);
+    yield delay(500);
     yield put(setFetchingToSucces(movies));
   } catch (error) {
-    yield delay(1000);
+    yield delay(500);
     yield put(setFetchingToFail());
   }
 }

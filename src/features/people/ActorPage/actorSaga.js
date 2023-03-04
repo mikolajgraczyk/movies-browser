@@ -4,8 +4,8 @@ import { fetchActorDetails, fetchActorDetailsSuccess } from "./actorSlice";
 
 function* fetchActorDetailsHandler({ payload: actorId }) {
   try {
-    yield delay(1000);
     const actorData = yield call(getPersonData, actorId);
+    yield delay(500);
     yield put(fetchActorDetailsSuccess(actorData));
   } catch (error) {}
 }
