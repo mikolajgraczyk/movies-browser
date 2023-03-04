@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useLocation } from "react-router-dom";
 import {
     StyledHeader,
     GridWrapper,
@@ -16,6 +17,7 @@ import {
 
 const Header = () => {
     const [input, setInput] = useState();
+    const location =useLocation();
 
     const onInputChange = ({ target }) => setInput(target.value);
 
@@ -37,7 +39,11 @@ const Header = () => {
                         <StyledSearchIcon />
                     </SearchBarIcon>
                     <SearchBarInput
-                        placeholder="Search for movies..."
+                        placeholder={
+                            location.pathname.includes("people")
+                              ? "Search for people..."
+                              : "Search for movies..."
+                            }
                         value={input}
                         onChange={onInputChange}
                     />
