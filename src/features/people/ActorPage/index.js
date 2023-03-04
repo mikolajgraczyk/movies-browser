@@ -5,25 +5,15 @@ import { Container } from "../../../common/Container";
 import ErrorPage from "../../../common/ErrorPage";
 import { Loading } from "../../../common/Loading";
 import About from "./About";
-import {
-  fetchActorDetails,
-  selectActorDetails,
-  selectActorInfo,
-  selectActorPageStatus,
-  selectMoviesCast,
-} from "./actorSlice";
+import { fetchActorDetails, selectActorPageStatus } from "./actorSlice";
 import Cast from "./Cast";
+import Crew from "./Crew";
 
 const ActorPage = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
 
   const pageStatus = useSelector(selectActorPageStatus);
-
-  const actorInfo = useSelector(selectActorInfo);
-  const moviesCast = useSelector(selectMoviesCast);
-  const actorDetails = useSelector(selectActorDetails);
-  console.log(moviesCast);
 
   useEffect(() => {
     dispatch(fetchActorDetails(id));
@@ -33,8 +23,11 @@ const ActorPage = () => {
     loading: <Loading />,
     success: (
       <>
-        <About actorInfo={actorInfo} />
-        <Cast moviesCast={moviesCast} />
+        <Container actorPage>
+          <About />
+          <Cast />
+          <Crew />
+        </Container>
       </>
     ),
     fail: <ErrorPage />,
