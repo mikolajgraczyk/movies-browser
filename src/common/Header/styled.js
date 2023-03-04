@@ -29,7 +29,7 @@ export const GridWrapper = styled.div`
   margin: auto;
   display: grid;
   gap: 16px;
-  grid-template-columns: auto minmax(0, 432px);
+  grid-template-columns: auto minmax(205px, 432px);
 
   @media (max-width: ${bpMobile}px) {
     grid-template-columns: 1fr;
