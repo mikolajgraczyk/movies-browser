@@ -3,7 +3,11 @@ import { createSlice } from "@reduxjs/toolkit";
 const actorSlice = createSlice({
   name: "actor",
   initialState: {
-    actorDetails: {},
+    actorDetails: {
+      actorInfo: {},
+      moviesCast: [],
+      moviesCrew: [],
+    },
     status: "loading",
   },
   reducers: {
@@ -23,10 +27,11 @@ const actorSlice = createSlice({
 export const { fetchActorDetails, fetchActorDetailsSuccess } =
   actorSlice.actions;
 
-const selectActorState = (state) => state.actor;
+export const selectActorState = (state) => state.actor;
 export const selectActorDetails = (state) =>
   selectActorState(state).actorDetails;
-export const selectActorInfo = (state) => selectActorDetails(state)[0];
+export const selectActorInfo = (state) => selectActorDetails(state).actorInfo;
+export const selectMoviesCast = (state) => selectActorDetails(state).moviesCast;
 export const selectActorPageStatus = (state) => selectActorState(state).status;
 
 export default actorSlice.reducer;

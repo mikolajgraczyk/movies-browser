@@ -38,5 +38,9 @@ export const getPersonData = async (id) => {
     creditsRequest,
   ]);
 
-  return [personInfo, personCredits];
+  return {
+    actorInfo: personInfo,
+    moviesCast: personCredits.cast,
+    moviesCrew: personCredits.crew,
+  };
 };

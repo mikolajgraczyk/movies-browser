@@ -40,14 +40,21 @@ export const selectFetchingStatus = (state) =>
 
 export const selectedGenreByIds = (state, genreIds) => {
   const genres = selectGenres(state);
+  let foundGenres = [];
 
-  if (genres.length > 1) {
-    return genreIds.map((genreId) => {
-      return selectGenres(state).find((genre) => genre.id === genreId);
+  if (genres.length > 0) {
+    genreIds.forEach((genreId) => {
+      const foundGenre = selectGenres(state).find(
+        (genre) => genre.id === genreId
+      );
+
+      if (foundGenre) {
+        foundGenres.push(foundGenre);
+      }
     });
   }
 
-  return genres;
+  return foundGenres;
 };
 
 export default moviesSlice.reducer;
