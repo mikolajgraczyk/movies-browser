@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 const bpMobile = ({ theme }) => theme.breakpoint.mobile;
 
@@ -31,4 +31,14 @@ export const SectionTitle = styled.h2`
     max-width: 1368px;
     font-size: 18px;
   }
+
+  ${({ location }) =>
+    location === "actorPage" &&
+    css`
+      margin: 64px 0 24px;
+
+      @media (max-width: ${({ theme }) => theme.breakpoint.mobile}px) {
+        margin: 24px 0 16px;
+      }
+    `}
 `;
