@@ -32,6 +32,7 @@ export const selectActorDetails = (state) =>
   selectActorState(state).actorDetails;
 export const selectActorInfo = (state) => selectActorDetails(state).actorInfo;
 export const selectMoviesCast = (state) => selectActorDetails(state).moviesCast;
+export const selectMoviesCrew = (state) => selectActorDetails(state).moviesCrew;
 export const selectActorPageStatus = (state) => selectActorState(state).status;
 
 export default actorSlice.reducer;
