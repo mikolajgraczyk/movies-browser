@@ -18,7 +18,7 @@ export const StyledMovieTile = styled(Link)`
 
   &:hover {
     transform: translateY(-8px);
-    box-shadow: 0px 8px 20px 5px #ced7d9;
+    box-shadow: 0px 8px 20px 5px #a1bae2;
   }
 
   @media (max-width: ${bpMobile}px) {
