@@ -7,7 +7,8 @@ export const StyledAbout = styled.section`
   grid-template-columns: minmax(116px, 399px) auto;
   grid-template-areas:
     "i h"
-    "i d";
+    "i b"
+    "i p";
   padding: 40px;
   column-gap: 40px;
 
@@ -22,7 +23,7 @@ export const ActorImage = styled.img`
   display: block;
   width: 100%;
   border-radius: 5px;
-  grid-area: 1 / 1 / 3 / 2;
+  grid-area: 1 / 1 / 4 / 2;
 
   @media (max-width: ${bpMobile}px) {
     grid-row: 1 / 2;
@@ -48,7 +49,7 @@ export const BirthInfo = styled.div`
   gap: 8px;
   margin: 0 0 24px;
   font-size: 18px;
-  grid-area: d;
+  grid-area: b;
 
   @media (max-width: ${bpMobile}px) {
     font-size: 12px;
@@ -65,10 +66,10 @@ export const ActorBio = styled.p`
   margin: 0;
   font-size: 20px;
   line-height: 1.6;
-  grid-area: d;
+  grid-area: b;
 
   @media (max-width: ${bpMobile}px) {
-    grid-column: 1 / 3;
+    grid-area: 2 / 1 / 4 / 3;
     font-size: 14px;
   }
 `;
