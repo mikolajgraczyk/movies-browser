@@ -1,5 +1,4 @@
-import { useLocation } from "react-router-dom";
-import { searchQueryParamName, useQueryParameter, useReplaceQueryParameter } from "./queryParameters";
+import { useLocation, useSearchParams } from "react-router-dom";
 import {
     StyledHeader,
     GridWrapper,
@@ -17,14 +16,17 @@ import {
 
 const Header = () => {
     const location = useLocation();
-    const query = useQueryParameter(searchQueryParamName);
-    const replaceQueryParameter = useReplaceQueryParameter();
+    const searchQueryParamName = "search";
+    const [searchParams, setSearchParams] = useSearchParams({ [searchQueryParamName]: "" });
+    const query = searchParams.get(searchQueryParamName);
 
     const onInputChange = ({ target }) => {
-        replaceQueryParameter({
-            key: searchQueryParamName,
-            value: target.value.trim() !== "" ? target.value : undefined,
-        });
+        if (target.value.trim() === "") {
+            searchParams.delete(searchQueryParamName);
+            setSearchParams(searchParams);
+        } else {
+            setSearchParams({ [searchQueryParamName]: target.value })
+        }
     };
 
     return (
@@ -47,9 +49,9 @@ const Header = () => {
                     <SearchBarInput
                         placeholder={
                             location.pathname.includes("people")
-                              ? "Search for people..."
-                              : "Search for movies..."
-                            }
+                                ? "Search for people..."
+                                : "Search for movies..."
+                        }
                         value={query || ""}
                         onChange={onInputChange}
                     />
