@@ -7,7 +7,7 @@ import { selectMoviesCrew } from "../actorSlice";
 
 const Crew = () => {
   const moviesCrew = useSelector(selectMoviesCrew);
-  console.log(moviesCrew);
+
   return (
     moviesCrew.length > 0 && (
       <TilesSection

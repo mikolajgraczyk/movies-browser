@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 
 const Tags = ({ genreIds }) => {
   const genres = useSelector((state) => selectedGenreByIds(state, genreIds));
-  // console.log(genres)
+
   return (
     <StyledTags>
       {genres.map(({ id, name }) => (
