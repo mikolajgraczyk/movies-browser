@@ -41,10 +41,12 @@ export const ActorName = styled.h3`
   font-weight: 500;
   margin: 12px 0 0 0;
   color: ${({ theme }) => theme.color.woodsmoke};
+  height: 64px;
 
   @media (max-width: ${bpMobile}px) {
     font-size: 14px;
     margin: 8px 0 0 0;
+    height: 36px;
   }
 `;
 
