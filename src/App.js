@@ -28,7 +28,6 @@ function App() {
           <Route path="/" element={<Navigate to="/movies" />} />
         </Routes>
       </Main>
-      <Pagination />
     </>
   );
 }

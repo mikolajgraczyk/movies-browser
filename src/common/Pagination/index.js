@@ -11,7 +11,7 @@ import {
   ButtonText,
 } from "./styled";
 
-const Pagination = () => {
+const Pagination = ({ location }) => {
   const [currentPage, setCurrentPage] = useState(1);
 
   const onGoToFirst = () => {
@@ -39,7 +39,7 @@ const Pagination = () => {
   };
 
   return (
-    <StyledPagination>
+    <StyledPagination location={location}>
       <ButtonsWrapper>
         <Button disabled={currentPage === 1} onClick={onGoToFirst}>
           <LeftArrow mobile="true" />
