@@ -18,3 +18,29 @@ export const getGenres = async () => {
 
   return data.genres;
 };
+
+export const getPersonById = async (id) => {
+  const { data } = await axios.get(`${baseUrl}/person/${id}?${apiKey}`);
+
+  return data;
+};
+
+export const getPersonData = async (id) => {
+  const { data: infoRequest } = await axios.get(
+    `${baseUrl}/person/${id}?${apiKey}`
+  );
+  const { data: creditsRequest } = await axios.get(
+    `${baseUrl}/person/${id}/tv_credits?${apiKey}&language=en-US`
+  );
+
+  const [personInfo, personCredits] = await axios.all([
+    infoRequest,
+    creditsRequest,
+  ]);
+
+  return {
+    actorInfo: personInfo,
+    moviesCast: personCredits.cast,
+    moviesCrew: personCredits.crew,
+  };
+};

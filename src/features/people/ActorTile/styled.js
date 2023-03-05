@@ -14,7 +14,7 @@ export const StyledActorTile = styled(Link)`
 
   &:hover {
     transform: translateY(-4px);
-    box-shadow: 0px 6px 18px 2px #ced7d9;
+    box-shadow: 0px 6px 18px 2px #c2d7ff;
   }
 
   @media (max-width: ${bpMobile}px) {

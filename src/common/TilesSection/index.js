@@ -1,9 +1,9 @@
-import { SectionTitle, StyledTilesSection, SectionList } from "./styled";
+import { SectionTitle, StyledTilesSection } from "./styled";
 
-const TilesSection = ({ title, children }) => {
+const TilesSection = ({ title, children, location }) => {
   return (
     <StyledTilesSection>
-      <SectionTitle>{title}</SectionTitle>
+      <SectionTitle location={location}>{title}</SectionTitle>
       {children}
     </StyledTilesSection>
   );

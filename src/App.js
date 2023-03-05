@@ -8,6 +8,7 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { fetchGenres, fetchMovies } from "./features/movies/moviesSlice";
 import { fetchPeople } from "./features/people/peopleSlice";
+import ActorPage from "./features/people/ActorPage";
 
 function App() {
   const dispatch = useDispatch();
@@ -16,7 +17,6 @@ function App() {
     dispatch(fetchGenres());
     dispatch(fetchMovies());
     dispatch(fetchPeople());
-
   }, []);
   return (
     <>
@@ -25,6 +25,7 @@ function App() {
         <Routes>
           <Route path="/movies" element={<PopularMoviesPage />} />
           <Route path="/people" element={<PopularPeoplePage />} />
+          <Route path="/people/:id" element={<ActorPage />} />
           <Route path="/" element={<Navigate to="/movies" />} />
         </Routes>
       </Main>

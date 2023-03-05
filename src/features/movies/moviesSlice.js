@@ -56,7 +56,7 @@ export const selectGenreByIds = (state, genreIds) => {
     return foundGenres;
   }
 
-  return genres;
+  return foundGenres;
 };
 
 export default moviesSlice.reducer;
