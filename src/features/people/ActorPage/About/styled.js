@@ -3,6 +3,7 @@ import styled from "styled-components";
 const bpMobile = ({ theme }) => theme.breakpoint.mobile;
 
 export const StyledAbout = styled.section`
+  background-color: ${({ theme }) => theme.color.white};
   display: grid;
   grid-template-columns: minmax(116px, 399px) auto;
   grid-template-areas:
@@ -29,8 +30,6 @@ export const ActorImage = styled.img`
     grid-row: 1 / 2;
   }
 `;
-
-export const ActorInfo = styled.div``;
 
 export const Name = styled.h1`
   font-size: 36px;
