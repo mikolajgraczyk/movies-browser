@@ -11,6 +11,7 @@ export const StyledActorTile = styled(Link)`
   text-decoration: none;
   background-color: ${({ theme }) => theme.color.white};
   transition: all 170ms cubic-bezier(0.45, 0.05, 0.55, 0.95);
+  height: 100%;
 
   &:hover {
     transform: translateY(-4px);
