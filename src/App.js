@@ -4,10 +4,9 @@ import PopularMoviesPage from "./features/movies/PopularMoviesPage";
 import PopularPeoplePage from "./features/people/PopularPeoplePage";
 import Header from "./common/Header";
 import { Main } from "./common/Main";
-import { Routes, Route, Navigate } from "react-router-dom";
+import { Routes, Route, Navigate, useSearchParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { fetchGenres, fetchMovies } from "./features/movies/moviesSlice";
-import { fetchPeople } from "./features/people/peopleSlice";
+import { fetchGenres } from "./features/movies/moviesSlice";
 import ActorPage from "./features/people/ActorPage";
 
 function App() {
@@ -15,8 +14,6 @@ function App() {
 
   useEffect(() => {
     dispatch(fetchGenres());
-    dispatch(fetchMovies());
-    dispatch(fetchPeople());
   }, []);
   return (
     <>
