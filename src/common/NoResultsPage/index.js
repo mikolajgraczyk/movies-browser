@@ -12,7 +12,7 @@ const NoResultsPage = () => {
 
   return (
     <Container>
-      <TilesSection title={`Sorry there are no results for “${query}”`} >
+      <TilesSection title={`Sorry, there are no results for “${query}”`} >
         <StyledNoResultsImage />
       </TilesSection>
     </Container>
