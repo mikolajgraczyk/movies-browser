@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Rates from "./Rates";
 import {
   MovieInfo,
@@ -6,14 +7,28 @@ import {
   Subtitle,
   Title,
   Dummy,
+  StandbyPoster,
+  StandbyWrapper,
 } from "./styled";
 import Tags from "./Tags";
 
 const MovieTile = ({ poster, title, subtitle, score, votes, genreIds }) => {
+  const [posterLoaded, setPosterLoaded] = useState(false);
+
   return (
     <StyledMovieTile>
       {poster ? (
-        <Poster src={`https://image.tmdb.org/t/p/w500${poster}`} alt={title} />
+        <>
+          <StandbyWrapper loaded={posterLoaded}>
+            <StandbyPoster />
+          </StandbyWrapper>
+          <Poster
+            loaded={posterLoaded}
+            src={`https://image.tmdb.org/t/p/w500${poster}`}
+            alt={title}
+            onLoad={() => setPosterLoaded(true)}
+          />
+        </>
       ) : (
         <div>
           <Dummy />
