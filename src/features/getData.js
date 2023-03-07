@@ -44,3 +44,24 @@ export const getPersonData = async (id) => {
     moviesCrew: personCredits.crew,
   };
 };
+
+export const getMovieData = async (id) => {
+  const { data: infoRequest } = await axios.get(
+    `${baseUrl}/movie/${id}?${apiKey}`
+  );
+
+  const { data: creditsRequest } = await axios.get(
+    `${baseUrl}/movie/${id}/credits?${apiKey}`
+  );
+
+  const [movieInfo, movieCredits] = await axios.all([
+    infoRequest,
+    creditsRequest,
+  ]);
+
+  return {
+    movieInfo: movieInfo,
+    movieCast: movieCredits.cast,
+    movieCrew: movieCredits.crew,
+  };
+};

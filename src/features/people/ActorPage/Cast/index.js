@@ -10,20 +10,21 @@ const Cast = () => {
   return (
     moviesCast.length > 0 && (
       <TilesSection
-        location="actorPage"
+        location="detailsPage"
         title={`Movies - cast (${moviesCast.length})`}
       >
         <GridList popularMovies>
           {moviesCast.map((movie) => (
             <li key={movie.credit_id}>
               <MovieTile
-                title={movie.name}
+                title={movie.title}
                 genreIds={movie.genre_ids}
                 poster={movie.poster_path}
                 subtitle={`${movie.character} (${movie.first_air_date.slice(
                   0,
                   4
                 )})`}
+                id={movie.id}
               />
             </li>
           ))}

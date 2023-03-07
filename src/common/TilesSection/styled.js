@@ -33,7 +33,7 @@ export const SectionTitle = styled.h2`
   }
 
   ${({ location }) =>
-    location === "actorPage" &&
+    location === "detailsPage" &&
     css`
       margin: 64px 0 24px;
 

@@ -11,7 +11,7 @@ const Crew = () => {
   return (
     moviesCrew.length > 0 && (
       <TilesSection
-        location="actorPage"
+        location="detailsPage"
         title={`Movies - crew (${moviesCrew.length})`}
       >
         <GridList popularMovies>

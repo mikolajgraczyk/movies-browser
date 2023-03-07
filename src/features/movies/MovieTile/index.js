@@ -9,9 +9,9 @@ import {
 } from "./styled";
 import Tags from "./Tags";
 
-const MovieTile = ({ poster, title, subtitle, score, votes, genreIds }) => {
+const MovieTile = ({ poster, title, subtitle, score, votes, genreIds, id }) => {
   return (
-    <StyledMovieTile>
+    <StyledMovieTile to={`/movies/${id}`}>
       {poster ? (
         <Poster src={`https://image.tmdb.org/t/p/w500${poster}`} alt={title} />
       ) : (
