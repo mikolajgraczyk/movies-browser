@@ -14,12 +14,8 @@ const PopularMoviesPage = () => {
   const fetchingStatus = useSelector(selectFetchingStatus);
   const dispatch = useDispatch();
 
-  const [searchParams, setSearchParams] = useSearchParams({ page: 1 });
+  const [searchParams] = useSearchParams({ page: 1 });
   const currentPage = Number(searchParams.get("page")) || 1;
-
-  useEffect(() => {
-    setSearchParams(searchParams);
-  }, []);
 
   useEffect(() => {
     dispatch(updateMoviesCurrentPage(currentPage));

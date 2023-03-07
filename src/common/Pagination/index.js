@@ -1,13 +1,6 @@
-import { useDispatch, useSelector } from "react-redux";
-import { useLocation, useSearchParams } from "react-router-dom";
-import {
-  selectMoviesCurrentPage,
-  selectMoviesTotalPages,
-} from "../../features/movies/moviesSlice";
-import {
-  selectPeopleCurrentPage,
-  selectPeopleTotalPages,
-} from "../../features/people/peopleSlice";
+import { useDispatch } from "react-redux";
+import { useSearchParams } from "react-router-dom";
+
 import {
   StyledPagination,
   ButtonsWrapper,
@@ -23,13 +16,8 @@ import {
 const Pagination = () => {
   const dispatch = useDispatch();
   const [searchParams, setSearchParams] = useSearchParams();
-  const { pathname } = useLocation();
   const currentPage = Number(searchParams.get("page")) || 1;
-  const totalPages = useSelector(selectMoviesTotalPages);
-  // const currentMoviesPage = useSelector(selectMoviesCurrentPage);
-  // const currentPeoplePage = useSelector(selectPeopleCurrentPage)
-  // const totalMoviesPages = useSelector(selectMoviesTotalPages);
-  // const totalPeoplePages = useSelector(selectPeopleTotalPages)
+  const totalPages = 500;
 
   const onGoToFirst = () => {
     if (currentPage !== 1) {
