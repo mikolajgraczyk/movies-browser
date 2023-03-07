@@ -7,7 +7,7 @@ import { selectMoviesCrew } from "../actorSlice";
 
 const Crew = () => {
   const moviesCrew = useSelector(selectMoviesCrew);
-
+  console.log(moviesCrew);
   return (
     moviesCrew.length > 0 && (
       <TilesSection
@@ -18,14 +18,10 @@ const Crew = () => {
           {moviesCrew.map((movie) => (
             <li key={movie.credit_id}>
               <MovieTile
-                title={movie.name}
+                title={movie.title}
                 genreIds={movie.genre_ids}
                 poster={movie.poster_path}
-                subtitle={`${movie.job} ${
-                  movie.first_air_date
-                    ? `(${movie.first_air_date.slice(0, 4)})`
-                    : ""
-                }`}
+                subtitle={`${movie.job} ${movie.release_date.slice(0, 4)}`}
               />
             </li>
           ))}
