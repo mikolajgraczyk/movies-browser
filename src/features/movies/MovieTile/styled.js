@@ -106,7 +106,7 @@ export const Dummy = styled.div`
   }
 `;
 
-export const StandbyWrapper = styled.div`
+export const MoviesStandbyWrapper = styled.div`
   ${({ loaded }) =>
     loaded &&
     css`
@@ -114,7 +114,7 @@ export const StandbyWrapper = styled.div`
     `}
 `;
 
-export const StandbyPoster = styled(Dummy)`
+export const MovieStandbyPoster = styled(Dummy)`
   background-color: transparent;
   background: none;
 `;

@@ -7,8 +7,8 @@ import {
   Subtitle,
   Title,
   Dummy,
-  StandbyPoster,
-  StandbyWrapper,
+  MovieStandbyPoster,
+  MoviesStandbyWrapper,
 } from "./styled";
 import Tags from "./Tags";
 
@@ -19,9 +19,9 @@ const MovieTile = ({ poster, title, subtitle, score, votes, genreIds }) => {
     <StyledMovieTile>
       {poster ? (
         <>
-          <StandbyWrapper loaded={posterLoaded}>
-            <StandbyPoster />
-          </StandbyWrapper>
+          <MoviesStandbyWrapper loaded={posterLoaded}>
+            <MovieStandbyPoster />
+          </MoviesStandbyWrapper>
           <Poster
             loaded={posterLoaded}
             src={`https://image.tmdb.org/t/p/w500${poster}`}
