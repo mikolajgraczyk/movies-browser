@@ -4,14 +4,12 @@ const bpMobile = ({ theme }) => theme.breakpoint.mobile;
 
 export const StyledBackgroundPoster = styled.div`
   background: black;
-  margin: -56px -16px 0px;
   color: white;
   display: flex;
   justify-content: center;
   position: relative;
 
   @media (max-width: ${bpMobile}px) {
-    margin-top: -24px;
   } ;
 `;
 

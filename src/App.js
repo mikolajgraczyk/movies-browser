@@ -22,7 +22,6 @@ function App() {
   return (
     <>
       <Header />
-      <Main>
         <Routes>
           <Route path="/movies" element={<PopularMoviesPage />} />
           <Route path="/people" element={<PopularPeoplePage />} />
@@ -30,8 +29,6 @@ function App() {
           <Route path="/movies/:id" element={<MoviePage />} />
           <Route path="/" element={<Navigate to="/movies" />} />
         </Routes>
-      </Main>
-      {/* <Pagination /> */}
     </>
   );
 }

@@ -25,11 +25,11 @@ const MoviePage = () => {
     success: (
       <>
         <BackgroundPoster />
-        <Container>
-          <About />
-          <Cast />
-          <Crew />
-        </Container>
+          <Container>
+            <About />
+            <Cast />
+            <Crew />
+          </Container>
       </>
     ),
     fail: <ErrorPage />,
