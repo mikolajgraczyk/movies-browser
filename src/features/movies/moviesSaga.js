@@ -1,5 +1,4 @@
-import { useSearchParams } from "react-router-dom";
-import { call, put, delay, takeLatest, select } from "redux-saga/effects";
+import { call, put, delay, takeLatest } from "redux-saga/effects";
 import { getPopularData, getGenres } from "../getData";
 import {
   setGenres,
@@ -7,7 +6,6 @@ import {
   setFetchingToFail,
   fetchMovies,
   fetchGenres,
-  selectMoviesCurrentPage,
 } from "./moviesSlice";
 
 function* fetchGenresHandler() {
