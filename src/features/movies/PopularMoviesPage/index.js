@@ -13,7 +13,7 @@ const PopularMoviesPage = () => {
     success: (
       <>
         <PopularMovies />
-        <Pagination location="PopularMovies" />
+        <Pagination location="popularMovies" />
       </>
     ),
     fail: <ErrorPage />,

@@ -16,7 +16,7 @@ export const StyledPagination = styled.section`
   }
 
   ${({ location }) =>
-    location === "PopularMovies" &&
+    location === "popularMovies" &&
     css`
       margin: 40px 0 63px;
 
@@ -26,7 +26,7 @@ export const StyledPagination = styled.section`
     `}
 
   ${({ location }) =>
-    location === "PopularPeople" &&
+    location === "popularPeople" &&
     css`
       margin: 56px 0 83px;
 
