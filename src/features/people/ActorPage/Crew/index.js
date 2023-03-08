@@ -1,5 +1,4 @@
 import { useSelector } from "react-redux";
-import { Container } from "../../../../common/Container";
 import { GridList } from "../../../../common/GridList";
 import TilesSection from "../../../../common/TilesSection";
 import MovieTile from "../../../movies/MovieTile";
@@ -7,7 +6,7 @@ import { selectMoviesCrew } from "../actorSlice";
 
 const Crew = () => {
   const moviesCrew = useSelector(selectMoviesCrew);
-  console.log(moviesCrew);
+
   return (
     moviesCrew.length > 0 && (
       <TilesSection

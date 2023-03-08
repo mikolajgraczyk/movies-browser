@@ -20,7 +20,7 @@ const PopularPeoplePage = () => {
   useEffect(() => {
     dispatch(updatePeopleCurrentPage(currentPage));
     dispatch(fetchPeople({ currentPage }));
-  }, [currentPage]);
+  }, [currentPage, dispatch]);
 
   return {
     loading: <Loading />,

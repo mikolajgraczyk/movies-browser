@@ -13,7 +13,6 @@ const moviesSlice = createSlice({
       state.genres = genres;
     },
     setFetchingToSucces: (state, { payload }) => {
-      console.log(payload);
       state.movies = payload.results;
       state.fetchingStatus = "success";
     },

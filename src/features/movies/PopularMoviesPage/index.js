@@ -20,7 +20,7 @@ const PopularMoviesPage = () => {
   useEffect(() => {
     dispatch(updateMoviesCurrentPage(currentPage));
     dispatch(fetchMovies({ currentPage }));
-  }, [currentPage]);
+  }, [currentPage, dispatch]);
 
   return {
     loading: <Loading />,

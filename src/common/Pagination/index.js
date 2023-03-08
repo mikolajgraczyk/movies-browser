@@ -1,4 +1,3 @@
-import { useDispatch } from "react-redux";
 import { useSearchParams } from "react-router-dom";
 
 import {
@@ -14,7 +13,6 @@ import {
 } from "./styled";
 
 const Pagination = () => {
-  const dispatch = useDispatch();
   const [searchParams, setSearchParams] = useSearchParams();
   const currentPage = Number(searchParams.get("page")) || 1;
   const totalPages = 500;
