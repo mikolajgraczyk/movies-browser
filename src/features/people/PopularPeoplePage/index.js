@@ -2,6 +2,7 @@ import { useSelector } from "react-redux";
 import { selectFetchingStatus } from "../peopleSlice";
 import { Loading } from "../../../common/Loading";
 import { Main } from "../../../common/Main";
+import Header from "../../../common/Header";
 import ErrorPage from "../../../common/ErrorPage";
 import PopularPeople from "./PopularPeople";
 import Pagination from "../../../common/Pagination";
@@ -13,6 +14,7 @@ const PopularPeoplePage = () => {
     loading: <Loading />,
     success: (
       <>
+        <Header />
         <Main>
           <PopularPeople />
           <Pagination location="popularPeople" />

@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { Container } from "../../../common/Container";
 import { fetchMovieDetails, selectFetchingStatus } from "./MovieSlice";
+import Header from "../../../common/Header";
 import About from "./About";
 import BackgroundPoster from "./BackgroundPoster";
 import Cast from "./Cast";
@@ -24,12 +25,13 @@ const MoviePage = () => {
     loading: <Loading />,
     success: (
       <>
+        <Header isBlackBackground />
         <BackgroundPoster />
-          <Container>
-            <About />
-            <Cast />
-            <Crew />
-          </Container>
+        <Container>
+          <About />
+          <Cast />
+          <Crew />
+        </Container>
       </>
     ),
     fail: <ErrorPage />,

@@ -19,7 +19,6 @@ function App() {
   }, []);
   return (
     <>
-      <Header />
         <Routes>
           <Route path="/movies" element={<PopularMoviesPage />} />
           <Route path="/people" element={<PopularPeoplePage />} />
