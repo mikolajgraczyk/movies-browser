@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux";
 import { selectFetchingStatus } from "../peopleSlice";
 import { Loading } from "../../../common/Loading";
+import { Main } from "../../../common/Main";
 import ErrorPage from "../../../common/ErrorPage";
 import PopularPeople from "./PopularPeople";
 import Pagination from "../../../common/Pagination";
@@ -12,8 +13,10 @@ const PopularPeoplePage = () => {
     loading: <Loading />,
     success: (
       <>
-        <PopularPeople />
-        <Pagination location="popularPeople" />
+        <Main>
+          <PopularPeople />
+          <Pagination location="popularPeople" />
+        </Main>
       </>
     ),
     fail: <ErrorPage />,
