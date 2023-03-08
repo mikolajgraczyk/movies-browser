@@ -21,9 +21,9 @@ export const StyledAbout = styled.div`
     grid-column-gap: 16px;
     grid-row-gap: 16px;
     grid-template-areas:
-    "p i"
-    "p i"
-    "d d";
+      "p i"
+      "p i"
+      "d d";
   }
 `;
 
@@ -92,6 +92,23 @@ export const ProductionAndRelease = styled.span`
 
   @media (max-width: ${bpMobile}px) {
     display: none;
+  }
+`;
+
+export const CountryNameLong = styled.span`
+  font-size: 18px;
+
+  @media (max-width: ${bpMobile}px) {
+    display: none;
+  }
+`;
+
+export const CountryNameShort = styled.span`
+  font-size: 12px;
+  display: none;
+
+  @media (max-width: ${bpMobile}px) {
+    display: inline;
   }
 `;
 

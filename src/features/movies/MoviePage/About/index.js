@@ -9,6 +9,8 @@ import {
   ReleaseYear,
   SpecificInfo,
   ProductionAndRelease,
+  CountryNameLong,
+  CountryNameShort,
   Tags,
   Tag,
   Description,
@@ -29,11 +31,12 @@ const About = () => {
         <SpecificInfo>
           <div>
             <ProductionAndRelease>Production:</ProductionAndRelease>
-            {movieInfo.production_countries[0].name}
+            <CountryNameLong>{movieInfo.production_countries[0].name}</CountryNameLong>
+            <CountryNameShort>{movieInfo.production_countries[0].iso_3166_1}</CountryNameShort>
           </div>
           <div>
             <ProductionAndRelease>Release date:</ProductionAndRelease>
-            {movieInfo.release_date}
+            {movieInfo.release_date.replaceAll("-", ".")}
           </div>
         </SpecificInfo>
         <Tags>
