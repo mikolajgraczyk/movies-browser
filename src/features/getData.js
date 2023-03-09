@@ -11,6 +11,15 @@ export const getPopularData = async (dataName, currentPage) => {
   return data;
 };
 
+export const getDataByQuery = async (dataName, currentPage = 1, query) => {
+  if (!query) { return; }
+  const { data } = await axios.get(
+    `${baseUrl}/search/${dataName}?${apiKey}&language=en-US&query=${query}&page=${currentPage}`
+  );
+
+  return data;
+};
+
 export const getGenres = async () => {
   const { data } = await axios.get(
     `${baseUrl}/genre/movie/list?${apiKey}&language=en-US`
