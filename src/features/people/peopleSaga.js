@@ -1,5 +1,5 @@
-import { call, put, delay, takeLatest } from "redux-saga/effects";
-import { getPopularData } from "../getData";
+import { call, put, delay, debounce } from "redux-saga/effects";
+import { getDataByQuery, getPopularData } from "../getData";
 import {
   setFetchingToSucces,
   setFetchingToFail,
@@ -9,7 +9,10 @@ import {
 function* fetchPeopleHandler({ payload }) {
   try {
     const currentPage = payload.currentPage;
-    const data = yield call(getPopularData, "person", currentPage);
+    const query = payload.query;
+    const data = yield !query
+      ? call(getPopularData, "person", currentPage)
+      : call(getDataByQuery, "person", currentPage, query);
     yield delay(500);
     yield put(setFetchingToSucces(data));
   } catch (error) {
@@ -19,5 +22,5 @@ function* fetchPeopleHandler({ payload }) {
 }
 
 export function* peopleSaga() {
-  yield takeLatest(fetchPeople.type, fetchPeopleHandler);
+  yield debounce(500, fetchPeople.type, fetchPeopleHandler);
 }

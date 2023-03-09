@@ -11,6 +11,7 @@ import PopularPeople from "./PopularPeople";
 import { useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import Pagination from "../../../common/Pagination";
+import NoResultsPage from "../../../common/NoResultsPage";
 
 const PopularPeoplePage = () => {
   const fetchingStatus = useSelector(selectFetchingStatus);
@@ -18,13 +19,15 @@ const PopularPeoplePage = () => {
 
   const [searchParams] = useSearchParams({ page: 1 });
   const currentPage = Number(searchParams.get("page")) || 1;
+  const query = searchParams.get("search") || null;
 
   useEffect(() => {
     dispatch(updatePeopleCurrentPage(currentPage));
-    dispatch(fetchPeople({ currentPage }));
-  }, [currentPage, dispatch]);
+    dispatch(fetchPeople({ currentPage, query  }));
+  }, [currentPage, query , dispatch]);
 
   return {
+    noResults: <NoResultsPage />,
     loading: <Loading />,
     success: (
       <>

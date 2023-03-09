@@ -11,7 +11,11 @@ const peopleSlice = createSlice({
     setFetchingToSucces: (state, { payload }) => {
       state.people = payload.results;
       state.page = payload.page;
-      state.fetchingStatus = "success";
+      if (payload.total_results === 0) {
+        state.fetchingStatus = "noResults";
+      } else {
+        state.fetchingStatus = "success";
+      }
     },
     setFetchingToFail: (state) => {
       state.fetchingStatus = "fail";
