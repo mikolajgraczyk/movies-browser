@@ -12,11 +12,11 @@ import {
   ButtonText,
 } from "./styled";
 
-const Pagination = ({ location }) => {
+const Pagination = ({ location, fetchedPages }) => {
   const [searchParams, setSearchParams] = useSearchParams();
   const currentPage = Number(searchParams.get("page")) || 1;
   const query = searchParams.get("search");
-  const totalPages = 500;
+  const totalPages = fetchedPages > 500 ? 500 : fetchedPages;
 
   const onGoToFirst = () => {
     if (currentPage !== 1) {

@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   fetchPeople,
   selectFetchingStatus,
+  selectPeopleTotalPage,
   updatePeopleCurrentPage,
 } from "../peopleSlice";
 import { Loading } from "../../../common/Loading";
@@ -15,6 +16,7 @@ import NoResultsPage from "../../../common/NoResultsPage";
 
 const PopularPeoplePage = () => {
   const fetchingStatus = useSelector(selectFetchingStatus);
+  const fetchedPages = useSelector(selectPeopleTotalPage);
   const dispatch = useDispatch();
 
   const [searchParams] = useSearchParams({ page: 1 });
@@ -33,7 +35,7 @@ const PopularPeoplePage = () => {
       <>
         <Main>
           <PopularPeople />
-          <Pagination location="popularPeople" />
+          <Pagination location="popularPeople" fetchedPages={fetchedPages}/>
         </Main>
       </>
     ),
