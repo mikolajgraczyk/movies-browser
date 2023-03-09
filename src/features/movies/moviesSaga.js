@@ -1,5 +1,5 @@
 import { call, put, delay, takeLatest } from "redux-saga/effects";
-import { getPopularData, getGenres } from "../getData";
+import { getPopularData, getGenres, getDataByQuery } from "../getData";
 import {
   setGenres,
   setFetchingToSucces,
@@ -20,7 +20,11 @@ function* fetchGenresHandler() {
 function* fetchMoviesHandler({ payload }) {
   try {
     const currentPage = payload.currentPage;
-    const data = yield call(getPopularData, "movie", currentPage);
+    const query = payload.query;
+    //const data = yield call(getPopularData, "movie", currentPage);
+    const data = yield !query
+    ? call(getPopularData, "movie", currentPage)
+    : call(getDataByQuery, "movie", currentPage, query);
     yield delay(500);
     yield put(setFetchingToSucces(data));
   } catch (error) {

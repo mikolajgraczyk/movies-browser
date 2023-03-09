@@ -18,11 +18,12 @@ const PopularMoviesPage = () => {
 
   const [searchParams] = useSearchParams({ page: 1 });
   const currentPage = Number(searchParams.get("page")) || 1;
+  const query = searchParams.get("search") || null;
 
   useEffect(() => {
     dispatch(updateMoviesCurrentPage(currentPage));
-    dispatch(fetchMovies({ currentPage }));
-  }, [currentPage, dispatch]);
+    dispatch(fetchMovies({ currentPage, query }));
+  }, [currentPage, query, dispatch]);
 
   return {
     loading: <Loading />,
