@@ -24,6 +24,8 @@ const Cast = () => {
                   0,
                   4
                 )})`}
+                score={movie.vote_average}
+                votes={movie.vote_count}
               />
             </li>
           ))}
