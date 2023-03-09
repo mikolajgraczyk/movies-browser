@@ -10,9 +10,10 @@ export const StyledAbout = styled.div`
   justify-items: center;
   grid-template-areas:
     "p i"
-    "p i"
-    "p d";
+    "p d"
+    "p e";
   grid-column-gap: 40px;
+  grid-template-columns: minmax(114px, 312px) auto;
   box-shadow: 0px 4px 12px rgba(186, 199, 213, 0.5);
 
   @media (max-width: ${bpMobile}px) {
@@ -24,20 +25,14 @@ export const StyledAbout = styled.div`
       "p i"
       "p i"
       "d d";
+    grid-template-columns: 114px auto;
   }
 `;
 
 export const Poster = styled.img`
-  width: 312px;
-  height: 464px;
+  width: 100%;
   border-radius: 5px;
-  align-self: center;
   grid-area: p;
-
-  @media (max-width: ${bpMobile}px) {
-    width: 114px;
-    height: 169px;
-  }
 `;
 
 export const InfoSection = styled.div`
@@ -45,10 +40,12 @@ export const InfoSection = styled.div`
   flex-direction: column;
   gap: 24px;
   justify-self: left;
+  margin-bottom: 24px;
   grid-area: i;
 
   @media (max-width: ${bpMobile}px) {
     gap: 8px;
+    margin-bottom: 0;
   }
 `;
 

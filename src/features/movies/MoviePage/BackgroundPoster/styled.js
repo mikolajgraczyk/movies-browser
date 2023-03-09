@@ -80,7 +80,8 @@ export const Info = styled.div`
 
 export const Title = styled.h1`
   font-weight: 600;
-  font-size: 64px;
+  font-size: 1.5rem;
+  font-size: clamp(1.5rem, -1.6905158069883526rem + 6.655574043261231vw, 4rem);
   line-height: 120%;
   margin: 0;
 
