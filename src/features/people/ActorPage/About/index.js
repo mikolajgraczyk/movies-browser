@@ -13,7 +13,6 @@ import {
 
 const About = () => {
   const actorInfo = useSelector(selectActorInfo);
-  console.log(actorInfo);
 
   return (
     <StyledAbout>
