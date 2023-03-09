@@ -2,8 +2,6 @@ import styled from "styled-components";
 import dummyActorImage from "./images/dummyIcon.svg";
 
 export const DummyActor = styled.div`
-  max-height: 513px;
-  max-width: 342px;
   aspect-ratio: 2 / 3;
   object-fit: cover;
   border-radius: 5px;
