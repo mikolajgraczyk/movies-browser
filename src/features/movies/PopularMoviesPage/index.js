@@ -11,6 +11,7 @@ import PopularMovies from "./PopularMovies";
 import { useSearchParams } from "react-router-dom";
 import { useEffect } from "react";
 import Pagination from "../../../common/Pagination";
+import NoResultsPage from "../../../common/NoResultsPage";
 
 const PopularMoviesPage = () => {
   const fetchingStatus = useSelector(selectFetchingStatus);
@@ -26,6 +27,7 @@ const PopularMoviesPage = () => {
   }, [currentPage, query, dispatch]);
 
   return {
+    noResults: <NoResultsPage />,
     loading: <Loading />,
     success: (
       <>

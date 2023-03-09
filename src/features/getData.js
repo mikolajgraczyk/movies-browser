@@ -12,7 +12,9 @@ export const getPopularData = async (dataName, currentPage) => {
 };
 
 export const getDataByQuery = async (dataName, currentPage = 1, query) => {
-  if (!query) { return; }
+  if (!query) {
+    return;
+  }
   const { data } = await axios.get(
     `${baseUrl}/search/${dataName}?${apiKey}&language=en-US&query=${query}&page=${currentPage}`
   );

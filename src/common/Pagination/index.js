@@ -15,31 +15,42 @@ import {
 const Pagination = ({ location }) => {
   const [searchParams, setSearchParams] = useSearchParams();
   const currentPage = Number(searchParams.get("page")) || 1;
+  const query = searchParams.get("search");
   const totalPages = 500;
 
   const onGoToFirst = () => {
     if (currentPage !== 1) {
-      setSearchParams({ page: 1 });
+      query
+        ? setSearchParams({ search: query, page: 1 })
+        : setSearchParams({ page: 1 });
     }
   };
 
   const onGoToPrevious = () => {
     if (currentPage !== 1) {
       const previousPage = currentPage - 1;
-      setSearchParams({ page: previousPage });
+
+      query
+        ? setSearchParams({ search: query, page: previousPage })
+        : setSearchParams({ page: previousPage });
     }
   };
 
   const onGoToNext = () => {
     if (currentPage !== totalPages) {
       const nextPage = currentPage + 1;
-      setSearchParams({ page: nextPage });
+
+      query
+        ? setSearchParams({ search: query, page: nextPage })
+        : setSearchParams({ page: nextPage });
     }
   };
 
   const onGoToLast = () => {
     if (currentPage !== totalPages) {
-      setSearchParams({ page: totalPages });
+      query
+        ? setSearchParams({ search: query, page: totalPages })
+        : setSearchParams({ page: totalPages });
     }
   };
 
