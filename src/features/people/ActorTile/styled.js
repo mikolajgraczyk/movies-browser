@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 import { Link } from "react-router-dom";
-import dummyActorImage from "./images/dummyIcon.svg";
+import { DummyActor } from "../DummyActor";
 
 const bpMobile = ({ theme }) => theme.breakpoint.mobile;
 
@@ -46,6 +46,7 @@ export const ActorName = styled.h3`
   font-weight: 500;
   margin: 12px 0 0 0;
   color: ${({ theme }) => theme.color.woodsmoke};
+  word-break: break-word;
 
   @media (max-width: ${bpMobile}px) {
     font-size: 14px;
@@ -61,22 +62,6 @@ export const Role = styled.div`
   @media (max-width: ${bpMobile}px) {
     font-size: 13px;
     margin: 8px 0 0 0;
-  }
-`;
-
-export const DummyActor = styled.div`
-  max-height: 513px;
-  max-width: 342px;
-  aspect-ratio: 2 / 3;
-  object-fit: cover;
-  border-radius: 5px;
-  background-color: ${({ theme }) => theme.color.silver};
-  background-image: url(${dummyActorImage});
-  background-repeat: no-repeat;
-  background-position: center;
-
-  @media (max-width: ${bpMobile}px) {
-    width: 100%;
   }
 `;
 
