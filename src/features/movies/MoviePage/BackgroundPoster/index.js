@@ -1,5 +1,4 @@
 import { useSelector } from "react-redux";
-import { Main } from "../../../../common/Main";
 import { selectMovieInfo } from "../MovieSlice";
 import Rating from "../Rating";
 import {
@@ -23,7 +22,6 @@ const BackgroundPoster = () => {
           alt=""
         />
       </div>
-      <Main>
       <Wrapper>
         <Info>
           <Title>{movieInfo.original_title}</Title>
@@ -34,7 +32,6 @@ const BackgroundPoster = () => {
           />
         </Info>
       </Wrapper>
-      </Main>
     </StyledBackgroundPoster>
  
   );

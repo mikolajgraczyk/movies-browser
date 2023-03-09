@@ -8,6 +8,7 @@ import About from "./About";
 import BackgroundPoster from "./BackgroundPoster";
 import Cast from "./Cast";
 import Crew from "./Crew";
+import { Main } from "../../../common/Main";
 import { Loading } from "../../../common/Loading";
 import ErrorPage from "../../../common/ErrorPage";
 
@@ -27,11 +28,13 @@ const MoviePage = () => {
       <>
         <Header isBlackBackground />
         <BackgroundPoster />
-        <Container>
-          <About />
-          <Cast />
-          <Crew />
-        </Container>
+        <Main moviePage>
+          <Container>
+            <About />
+            <Cast />
+            <Crew />
+          </Container>
+        </Main>
       </>
     ),
     fail: <ErrorPage />,

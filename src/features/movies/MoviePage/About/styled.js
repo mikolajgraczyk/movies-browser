@@ -17,7 +17,7 @@ export const StyledAbout = styled.div`
   box-shadow: 0px 4px 12px rgba(186, 199, 213, 0.5);
 
   @media (max-width: ${bpMobile}px) {
-    margin-top: 16px;
+    margin-top: -8px;
     padding: 16px;
     grid-column-gap: 16px;
     grid-row-gap: 16px;
