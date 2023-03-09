@@ -20,7 +20,7 @@ const Cast = () => {
                 title={movie.title}
                 genreIds={movie.genre_ids}
                 poster={movie.poster_path}
-                subtitle={`${movie.character} (${movie.first_air_date.slice(
+                subtitle={`${movie.character} (${movie.release_date.slice(
                   0,
                   4
                 )})`}
