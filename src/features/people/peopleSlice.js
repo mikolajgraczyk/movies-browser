@@ -5,12 +5,14 @@ const peopleSlice = createSlice({
   initialState: {
     people: [],
     currentPage: 1,
+    totalPage: 500,
     fetchingStatus: "loading",
   },
   reducers: {
     setFetchingToSucces: (state, { payload }) => {
       state.people = payload.results;
       state.page = payload.page;
+      state.totalPage = payload.total_pages;
       if (payload.total_results === 0) {
         state.fetchingStatus = "noResults";
       } else {
@@ -41,5 +43,7 @@ export const selectFetchingStatus = (state) =>
   selectPeopleState(state).fetchingStatus;
 export const selectPeopleCurrentPage = (state) =>
   selectPeopleState(state).currentPage;
+export const selectPeopleTotalPage = (state) =>
+  selectPeopleState(state).totalPage;
 
 export default peopleSlice.reducer;
