@@ -10,9 +10,9 @@ function* fetchPeopleHandler({ payload }) {
   try {
     const currentPage = payload.currentPage;
     const query = payload.query;
-    const data = yield !query
-      ? call(getPopularData, "person", currentPage)
-      : call(getDataByQuery, "person", currentPage, query);
+    const data = yield query
+      ? call(getDataByQuery, "person", currentPage, query)
+      : call(getPopularData, "person", currentPage);
     yield delay(500);
     yield put(setFetchingToSucces(data));
   } catch (error) {

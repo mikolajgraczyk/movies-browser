@@ -21,9 +21,9 @@ function* fetchMoviesHandler({ payload }) {
   try {
     const currentPage = payload.currentPage;
     const query = payload.query;
-    const data = yield !query
-      ? call(getPopularData, "movie", currentPage)
-      : call(getDataByQuery, "movie", currentPage, query);
+    const data = yield query
+      ? call(getDataByQuery, "movie", currentPage, query) 
+      : call(getPopularData, "movie", currentPage);
     yield put(setFetchingToSucces(data));
   } catch (error) {
     yield delay(500);
