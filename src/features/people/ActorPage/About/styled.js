@@ -17,6 +17,7 @@ export const StyledAbout = styled.section`
     column-gap: normal;
     gap: 16px;
     padding: 16px;
+    grid-template-columns: 116px auto;
   }
 `;
 
