@@ -3,7 +3,6 @@ import { selectMovieInfo } from "../MovieSlice";
 import Rating from "../Rating";
 import {
   StyledBackgroundPoster,
-  Wrapper,
   Info,
   Title,
   BigPoster,
@@ -24,7 +23,6 @@ const BackgroundPoster = () => {
               alt=""
             />
           </div>
-          <Wrapper>
             <Info>
               <Title>{movieInfo.original_title}</Title>
               <Rating
@@ -33,7 +31,6 @@ const BackgroundPoster = () => {
                 voteAmount={movieInfo.vote_count}
               />
             </Info>
-          </Wrapper>
         </StyledBackgroundPoster>
       )}
     </>
