@@ -1,10 +1,10 @@
 import { useState } from "react";
+import { DummyActor } from "../DummyActor";
 import {
   StyledActorTile,
   ActorImage,
   ActorName,
   Role,
-  DummyActor,
   ActorStandbyWrapper,
   ActorStandbyPoster,
 } from "./styled";

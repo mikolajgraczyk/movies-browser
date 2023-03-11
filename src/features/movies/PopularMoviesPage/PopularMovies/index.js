@@ -3,14 +3,21 @@ import { GridList } from "../../../../common/GridList";
 import TilesSection from "../../../../common/TilesSection";
 import MovieTile from "../../MovieTile";
 import { useSelector } from "react-redux";
-import { selectMovies } from "../../moviesSlice";
+import { selectMovies, selectMoviesTotalResults } from "../../moviesSlice";
+import { useSearchParams } from "react-router-dom";
 
 const PopularMovies = () => {
   const movies = useSelector(selectMovies);
+  const totalResults = useSelector(selectMoviesTotalResults)
+  const [searchParams] = useSearchParams();
+  const query = searchParams.get("search");
+  const sectionTitle = query
+    ? `Search results for "${query}" (${totalResults})`
+    : "Popular Movies";
 
   return (
     <Container>
-      <TilesSection title="Popular movies">
+      <TilesSection title={sectionTitle}>
         <GridList popularMovies>
           {movies &&
             movies.map((movie) => (

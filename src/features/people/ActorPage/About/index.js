@@ -1,4 +1,5 @@
 import { useSelector } from "react-redux";
+import { DummyActor } from "../../DummyActor";
 import { selectActorInfo } from "../actorSlice";
 import {
   StyledAbout,
@@ -15,23 +16,32 @@ const About = () => {
 
   return (
     <StyledAbout>
-      <ActorImage
-        src={`https://image.tmdb.org/t/p/w500${actorInfo.profile_path}`}
-      />
+      {actorInfo.profile_path ? (
+        <ActorImage
+          src={`https://image.tmdb.org/t/p/w500${actorInfo.profile_path}`}
+          alt={actorInfo.name}
+        />
+      ) : (
+        <DummyActor />
+      )}
 
       <div>
         <Name>{actorInfo.name}</Name>
         <BirthInfo>
-          <div>
-            <SpecificInfo>
-              <OptionalInfo>date of</OptionalInfo> birth:
-            </SpecificInfo>
-            {actorInfo.birthday.replaceAll("-", ".")}
-          </div>
-          <div>
-            <SpecificInfo>Place of birth:</SpecificInfo>
-            {actorInfo.place_of_birth}
-          </div>
+          {actorInfo.birthday && (
+            <div>
+              <SpecificInfo>
+                <OptionalInfo>date of</OptionalInfo> birth:
+              </SpecificInfo>
+              {actorInfo.birthday.replaceAll("-", ".")}
+            </div>
+          )}
+          {actorInfo.place_of_birth && (
+            <div>
+              <SpecificInfo>Place of birth:</SpecificInfo>
+              {actorInfo.place_of_birth}
+            </div>
+          )}
         </BirthInfo>
       </div>
 
