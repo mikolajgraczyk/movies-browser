@@ -29,6 +29,7 @@ const PopularMovies = () => {
                   score={movie.vote_average}
                   votes={movie.vote_count}
                   genreIds={movie.genre_ids}
+                  id={movie.id}
                 />
               </li>
             ))}

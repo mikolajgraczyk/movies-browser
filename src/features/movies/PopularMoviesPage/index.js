@@ -7,6 +7,7 @@ import {
 } from "../moviesSlice";
 import { Loading } from "../../../common/Loading";
 import { Main } from "../../../common/Main";
+import Header from "../../../common/Header";
 import ErrorPage from "../../../common/ErrorPage";
 import PopularMovies from "./PopularMovies";
 import { useSearchParams } from "react-router-dom";
@@ -33,6 +34,7 @@ const PopularMoviesPage = () => {
     loading: <Loading />,
     success: (
       <>
+        <Header />
         <Main>
           <PopularMovies />
           <Pagination location="popularMovies" fetchedPages={fetchedPages} />

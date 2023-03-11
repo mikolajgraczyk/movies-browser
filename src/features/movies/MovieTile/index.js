@@ -12,11 +12,11 @@ import {
 } from "./styled";
 import Tags from "./Tags";
 
-const MovieTile = ({ poster, title, subtitle, score, votes, genreIds }) => {
-  const [posterLoaded, setPosterLoaded] = useState(false);
+const MovieTile = ({ poster, title, subtitle, score, votes, genreIds, id }) => {
+const [posterLoaded, setPosterLoaded] = useState(false);
 
   return (
-    <StyledMovieTile>
+    <StyledMovieTile to={`/movies/${id}`}>
       {poster ? (
         <>
           <MoviesStandbyWrapper loaded={posterLoaded}>

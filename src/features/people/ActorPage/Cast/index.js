@@ -10,7 +10,7 @@ const Cast = () => {
   return (
     moviesCast.length > 0 && (
       <TilesSection
-        location="actorPage"
+        location="detailsPage"
         title={`Movies - cast (${moviesCast.length})`}
       >
         <GridList popularMovies>
@@ -24,6 +24,7 @@ const Cast = () => {
                   0,
                   4
                 )})`}
+                id={movie.id}
                 score={movie.vote_average}
                 votes={movie.vote_count}
               />
