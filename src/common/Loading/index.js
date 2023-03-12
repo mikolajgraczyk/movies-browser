@@ -1,5 +1,4 @@
 import { StyledLoading, StyledSpinner } from "./styled";
-import Header from "../Header";
 import TilesSection from "../TilesSection";
 import { Main } from "../Main";
 import { useSearchParams } from "react-router-dom";
@@ -9,22 +8,17 @@ export const Loading = () => {
   const searchQueryParamName = "search";
   const [searchParams] = useSearchParams({ [searchQueryParamName]: "" });
   const query = searchParams.get(searchQueryParamName);
-  const sectionTitle = query
-  ? `Search results for "${query}"`
-  : null;
+  const sectionTitle = query ? `Search results for "${query}"` : null;
 
   return (
-    <>
-      <Header />
-      <Main>
-        <Container>
-          <TilesSection title={sectionTitle}>
-            <StyledLoading>
-              <StyledSpinner />
-            </StyledLoading>
-          </TilesSection>
-        </Container>
-      </Main>
-    </>
+    <Main>
+      <Container>
+        <TilesSection title={sectionTitle}>
+          <StyledLoading>
+            <StyledSpinner />
+          </StyledLoading>
+        </TilesSection>
+      </Container>
+    </Main>
   );
 };

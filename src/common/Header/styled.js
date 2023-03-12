@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 import { ReactComponent as VideoIcon } from "./images/VideoIcon.svg";
 import { ReactComponent as SearchIcon } from "./images/SearchIcon.svg";
@@ -12,10 +12,6 @@ export const StyledHeader = styled.header`
   @media (max-width: ${bpMobile}px) {
     padding: 16px;
   }
-
-  ${({isBlackBackground}) => isBlackBackground && css`
-    background: ${({ theme }) => theme.color.black};
-  `}
 `;
 
 export const TitleWrapper = styled.div`
