@@ -2,8 +2,6 @@ import styled, { css } from "styled-components";
 
 const bpMobile = ({ theme }) => theme.breakpoint.mobile;
 
-export const StyledTilesSection = styled.section``;
-
 export const SectionList = styled.ul`
   list-style: none;
   padding: 0;

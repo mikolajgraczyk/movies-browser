@@ -23,15 +23,13 @@ const ActorPage = () => {
   return {
     loading: <Loading />,
     success: (
-      <>
-        <Main>
-          <Container actorPage>
-            <About />
-            <Cast />
-            <Crew />
-          </Container>
-        </Main>
-      </>
+      <Main>
+        <Container actorPage>
+          <About />
+          <Cast />
+          <Crew />
+        </Container>
+      </Main>
     ),
     fail: <ErrorPage />,
   }[pageStatus];
