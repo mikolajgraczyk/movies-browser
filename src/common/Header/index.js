@@ -14,7 +14,7 @@ import {
   ButtonsWrapper,
 } from "./styled";
 
-const Header = ({ isBlackBackground }) => {
+const Header = () => {
   const location = useLocation();
   const searchQueryParamName = "search";
   const [searchParams, setSearchParams] = useSearchParams({
@@ -30,6 +30,9 @@ const Header = ({ isBlackBackground }) => {
       setSearchParams({ [searchQueryParamName]: target.value });
     }
   };
+
+  const isBlackBackground =
+    location.pathname !== "/movies" && location.pathname !== "/people";
 
   return (
     <StyledHeader isBlackBackground={isBlackBackground}>
