@@ -5,6 +5,7 @@ export const StyledLoading = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 120px;
 `;
 export const StyledSpinner = styled(svgSpinner)`
   width: 91px;
