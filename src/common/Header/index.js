@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useLocation, useNavigate, useSearchParams } from "react-router-dom";
 import {
   StyledHeader,
@@ -30,9 +31,7 @@ const Header = () => {
       searchParams.delete(searchQueryParamName);
       setSearchParams(searchParams);
     } else {
-      pathname.includes("/movies")
-        ? navigate(`/movies?${searchQueryParamName}=${target.value}`)
-        : navigate(`/people?${searchQueryParamName}=${target.value}`);
+      setSearchParams({ [searchQueryParamName]: target.value });
     }
   };
 

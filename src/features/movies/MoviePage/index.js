@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { Container } from "../../../common/Container";
-import { fetchMovieDetails, selectFetchingStatus } from "./MovieSlice";
+import { fetchMovieDetails, selectFetchingStatus } from "./movieSlice";
 import About from "./About";
 import BackgroundPoster from "./BackgroundPoster";
 import Cast from "./Cast";

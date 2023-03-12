@@ -14,6 +14,7 @@ function App() {
   useEffect(() => {
     dispatch(fetchGenres());
   }, [dispatch]);
+
   return (
     <>
       <Header />
