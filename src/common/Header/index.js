@@ -1,5 +1,4 @@
-import { useEffect } from "react";
-import { useLocation, useNavigate, useSearchParams } from "react-router-dom";
+import { useLocation, useSearchParams } from "react-router-dom";
 import {
   StyledHeader,
   GridWrapper,
@@ -17,7 +16,6 @@ import {
 
 const Header = () => {
   const { pathname } = useLocation();
-  const navigate = useNavigate();
 
   const searchQueryParamName = "search";
   const [searchParams, setSearchParams] = useSearchParams({
