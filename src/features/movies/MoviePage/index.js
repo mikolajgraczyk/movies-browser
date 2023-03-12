@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { Container } from "../../../common/Container";
 import { fetchMovieDetails, selectFetchingStatus } from "./MovieSlice";
-import Header from "../../../common/Header";
 import About from "./About";
 import BackgroundPoster from "./BackgroundPoster";
 import Cast from "./Cast";
@@ -20,7 +19,7 @@ const MoviePage = () => {
 
   useEffect(() => {
     dispatch(fetchMovieDetails(id));
-  }, [id]);
+  }, [id, dispatch]);
 
   return {
     loading: <Loading />,
