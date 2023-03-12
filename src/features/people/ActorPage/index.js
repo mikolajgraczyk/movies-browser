@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router";
+import { useNavigate, useParams } from "react-router";
+import { useSearchParams } from "react-router-dom";
 import { Container } from "../../../common/Container";
 import ErrorPage from "../../../common/ErrorPage";
 import { Loading } from "../../../common/Loading";
@@ -13,12 +14,21 @@ import Crew from "./Crew";
 const ActorPage = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
 
   const pageStatus = useSelector(selectActorPageStatus);
+  const query = searchParams.get("search");
 
   useEffect(() => {
     dispatch(fetchActorDetails(id));
   }, [id]);
+
+  useEffect(() => {
+    if (query) {
+      navigate(`/people?search=${query}`);
+    }
+  }, [query]);
 
   return {
     loading: <Loading />,
