@@ -29,11 +29,17 @@ const About = () => {
         <Name>{movieInfo.title}</Name>
         <ReleaseYear>{movieInfo.release_date.slice(0, 4)}</ReleaseYear>
         <SpecificInfo>
-          <div>
-            <ProductionAndRelease>Production:</ProductionAndRelease>
-            <CountryNameLong>{movieInfo.production_countries[0].name}</CountryNameLong>
-            <CountryNameShort>{movieInfo.production_countries[0].iso_3166_1}</CountryNameShort>
-          </div>
+          {movieInfo.production_countries[0] && (
+            <div>
+              <ProductionAndRelease>Production:</ProductionAndRelease>
+              <CountryNameLong>
+                {movieInfo.production_countries[0].name}
+              </CountryNameLong>
+              <CountryNameShort>
+                {movieInfo.production_countries[0].iso_3166_1}
+              </CountryNameShort>
+            </div>
+          )}
           <div>
             <ProductionAndRelease>Release date:</ProductionAndRelease>
             {movieInfo.release_date.replaceAll("-", ".")}
