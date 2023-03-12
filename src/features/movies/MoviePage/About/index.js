@@ -2,6 +2,7 @@ import { useSelector } from "react-redux";
 import { selectMovieInfo } from "../MovieSlice";
 import Rating from "../Rating";
 import {
+  Dummy,
   StyledAbout,
   Poster,
   InfoSection,
@@ -21,18 +22,26 @@ const About = () => {
 
   return (
     <StyledAbout>
-      <Poster
-        src={`https://image.tmdb.org/t/p/w500${movieInfo.poster_path}`}
-        alt=""
-      />
+      {movieInfo.poster_path ? (
+        <Poster
+          src={`https://image.tmdb.org/t/p/w500${movieInfo.poster_path}`}
+          alt=""
+        />
+      ) : (
+        <Dummy />
+      )}
       <InfoSection>
         <Name>{movieInfo.title}</Name>
         <ReleaseYear>{movieInfo.release_date.slice(0, 4)}</ReleaseYear>
         <SpecificInfo>
           <div>
             <ProductionAndRelease>Production:</ProductionAndRelease>
-            <CountryNameLong>{movieInfo.production_countries[0].name}</CountryNameLong>
-            <CountryNameShort>{movieInfo.production_countries[0].iso_3166_1}</CountryNameShort>
+            <CountryNameLong>
+              {movieInfo.production_countries[0].name}
+            </CountryNameLong>
+            <CountryNameShort>
+              {movieInfo.production_countries[0].iso_3166_1}
+            </CountryNameShort>
           </div>
           <div>
             <ProductionAndRelease>Release date:</ProductionAndRelease>
