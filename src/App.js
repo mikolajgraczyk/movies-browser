@@ -16,13 +16,14 @@ function App() {
   }, [dispatch]);
   return (
     <>
-        <Routes>
-          <Route path="/movies" element={<PopularMoviesPage />} />
-          <Route path="/people" element={<PopularPeoplePage />} />
-          <Route path="/people/:id" element={<ActorPage />} />
-          <Route path="/movies/:id" element={<MoviePage />} />
-          <Route path="/" element={<Navigate to="/movies" />} />
-        </Routes>
+      <Header />
+      <Routes>
+        <Route path="/movies" element={<PopularMoviesPage />} />
+        <Route path="/people" element={<PopularPeoplePage />} />
+        <Route path="/people/:id" element={<ActorPage />} />
+        <Route path="/movies/:id" element={<MoviePage />} />
+        <Route path="/" element={<Navigate to="/movies" />} />
+      </Routes>
     </>
   );
 }

@@ -34,7 +34,6 @@ const PopularMoviesPage = () => {
     loading: <Loading />,
     success: (
       <>
-        <Header />
         <Main>
           <PopularMovies />
           <Pagination location="popularMovies" fetchedPages={fetchedPages} />

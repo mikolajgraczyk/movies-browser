@@ -4,7 +4,6 @@ import { useParams } from "react-router";
 import { Container } from "../../../common/Container";
 import ErrorPage from "../../../common/ErrorPage";
 import { Loading } from "../../../common/Loading";
-import Header from "../../../common/Header";
 import { Main } from "../../../common/Main";
 import About from "./About";
 import { fetchActorDetails, selectActorPageStatus } from "./actorSlice";
@@ -25,7 +24,6 @@ const ActorPage = () => {
     loading: <Loading />,
     success: (
       <>
-        <Header />
         <Main>
           <Container actorPage>
             <About />

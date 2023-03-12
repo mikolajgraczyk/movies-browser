@@ -26,7 +26,6 @@ const MoviePage = () => {
     loading: <Loading />,
     success: (
       <>
-        <Header isBlackBackground />
         <BackgroundPoster />
         <Main moviePage>
           <Container>

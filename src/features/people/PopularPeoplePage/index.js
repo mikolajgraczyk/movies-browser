@@ -26,18 +26,17 @@ const PopularPeoplePage = () => {
 
   useEffect(() => {
     dispatch(updatePeopleCurrentPage(currentPage));
-    dispatch(fetchPeople({ currentPage, query  }));
-  }, [currentPage, query , dispatch]);
+    dispatch(fetchPeople({ currentPage, query }));
+  }, [currentPage, query, dispatch]);
 
   return {
     noResults: <NoResultsPage />,
     loading: <Loading />,
     success: (
       <>
-        <Header />
         <Main>
           <PopularPeople />
-          <Pagination location="popularPeople" fetchedPages={fetchedPages}/>
+          <Pagination location="popularPeople" fetchedPages={fetchedPages} />
         </Main>
       </>
     ),
