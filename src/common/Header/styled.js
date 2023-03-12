@@ -1,21 +1,17 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 import { ReactComponent as VideoIcon } from "./images/VideoIcon.svg";
 import { ReactComponent as SearchIcon } from "./images/SearchIcon.svg";
 const bpMobile = ({ theme }) => theme.breakpoint.mobile;
 
 export const StyledHeader = styled.header`
-  background: ${({ theme }) => theme.color.woodsmoke};
+  background: ${({ theme }) => theme.color.black};
   padding: 23px 16px;
   color: ${({ theme }) => theme.color.white};
 
   @media (max-width: ${bpMobile}px) {
     padding: 16px;
   }
-
-  ${({isBlackBackground}) => isBlackBackground && css`
-    background: ${({ theme }) => theme.color.black};
-  `}
 `;
 
 export const TitleWrapper = styled.div`
