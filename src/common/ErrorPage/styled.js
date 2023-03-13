@@ -65,6 +65,7 @@ export const Button = styled(NavLink)`
     border-radius: 5px;
     color: ${({ theme }) => theme.color.white};
     background-color: ${({ theme }) => theme.color.scienceBlue};
+    text-decoration: none;
 
     &:hover{
         cursor: pointer;
