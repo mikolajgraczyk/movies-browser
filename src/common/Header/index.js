@@ -1,4 +1,5 @@
 import { useLocation, useSearchParams } from "react-router-dom";
+import searchQueryParamName from "../searchQueryParamName";
 import {
   StyledHeader,
   GridWrapper,
@@ -17,7 +18,6 @@ import {
 const Header = () => {
   const { pathname } = useLocation();
 
-  const searchQueryParamName = "search";
   const [searchParams, setSearchParams] = useSearchParams({
     [searchQueryParamName]: "",
   });

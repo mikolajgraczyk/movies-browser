@@ -10,6 +10,7 @@ import Crew from "./Crew";
 import { Main } from "../../../common/Main";
 import { Loading } from "../../../common/Loading";
 import ErrorPage from "../../../common/ErrorPage";
+import searchQueryParamName from "../../../common/searchQueryParamName";
 
 const MoviePage = () => {
   const { id } = useParams();
@@ -18,7 +19,7 @@ const MoviePage = () => {
   const [searchParams] = useSearchParams();
 
   const status = useSelector(selectFetchingStatus);
-  const query = searchParams.get("search");
+  const query = searchParams.get(searchQueryParamName);
 
   useEffect(() => {
     dispatch(fetchMovieDetails(id));
@@ -26,7 +27,7 @@ const MoviePage = () => {
 
   useEffect(() => {
     if (query) {
-      navigate(`/movies?search=${query}`);
+      navigate(`/movies?${searchQueryParamName}=${query}`);
     }
   }, [query, navigate]);
 
