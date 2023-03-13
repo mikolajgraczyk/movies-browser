@@ -22,13 +22,13 @@ const ActorPage = () => {
 
   useEffect(() => {
     dispatch(fetchActorDetails(id));
-  }, [id]);
+  }, [id, dispatch]);
 
   useEffect(() => {
     if (query) {
       navigate(`/people?search=${query}`);
     }
-  }, [query]);
+  }, [query, navigate]);
 
   return {
     loading: <Loading />,

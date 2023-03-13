@@ -28,7 +28,7 @@ const MoviePage = () => {
     if (query) {
       navigate(`/movies?search=${query}`);
     }
-  }, [query]);
+  }, [query, navigate]);
 
   return {
     loading: <Loading />,
