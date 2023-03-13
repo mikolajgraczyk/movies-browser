@@ -11,11 +11,14 @@ export const StyledHeader = styled.header`
 
   @media (max-width: ${bpMobile}px) {
     padding: 16px;
+    background: ${({ theme }) => theme.color.black};
   }
 
-  ${({isBlackBackground}) => isBlackBackground && css`
-    background: ${({ theme }) => theme.color.black};
-  `}
+  ${({ isBlackBackground }) =>
+    isBlackBackground &&
+    css`
+      background: ${({ theme }) => theme.color.black};
+    `}
 `;
 
 export const TitleWrapper = styled.div`
