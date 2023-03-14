@@ -13,6 +13,7 @@ import { useSearchParams } from "react-router-dom";
 import { useEffect } from "react";
 import Pagination from "../../../common/Pagination";
 import NoResultsPage from "../../../common/NoResultsPage";
+import searchQueryParamName from "../../../common/searchQueryParamName";
 
 const PopularMoviesPage = () => {
   const fetchingStatus = useSelector(selectFetchingStatus);
@@ -21,7 +22,7 @@ const PopularMoviesPage = () => {
 
   const [searchParams] = useSearchParams({ page: 1 });
   const currentPage = Number(searchParams.get("page")) || 1;
-  const query = searchParams.get("search") || null;
+  const query = searchParams.get(searchQueryParamName) || null;
 
   useEffect(() => {
     dispatch(updateMoviesCurrentPage(currentPage));

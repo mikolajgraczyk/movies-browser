@@ -1,4 +1,5 @@
 import { useSearchParams } from "react-router-dom";
+import searchQueryParamName from "../searchQueryParamName";
 
 import {
   StyledPagination,
@@ -15,13 +16,13 @@ import {
 const Pagination = ({ location, fetchedPages }) => {
   const [searchParams, setSearchParams] = useSearchParams();
   const currentPage = Number(searchParams.get("page")) || 1;
-  const query = searchParams.get("search");
+  const query = searchParams.get(searchQueryParamName);
   const totalPages = fetchedPages > 500 ? 500 : fetchedPages;
 
   const onGoToFirst = () => {
     if (currentPage !== 1) {
       query
-        ? setSearchParams({ search: query, page: 1 })
+        ? setSearchParams({ [searchQueryParamName]: query, page: 1 })
         : setSearchParams({ page: 1 });
     }
   };
@@ -31,7 +32,7 @@ const Pagination = ({ location, fetchedPages }) => {
       const previousPage = currentPage - 1;
 
       query
-        ? setSearchParams({ search: query, page: previousPage })
+        ? setSearchParams({ [searchQueryParamName]: query, page: previousPage })
         : setSearchParams({ page: previousPage });
     }
   };
@@ -41,7 +42,7 @@ const Pagination = ({ location, fetchedPages }) => {
       const nextPage = currentPage + 1;
 
       query
-        ? setSearchParams({ search: query, page: nextPage })
+        ? setSearchParams({ [searchQueryParamName]: query, page: nextPage })
         : setSearchParams({ page: nextPage });
     }
   };
@@ -49,7 +50,7 @@ const Pagination = ({ location, fetchedPages }) => {
   const onGoToLast = () => {
     if (currentPage !== totalPages) {
       query
-        ? setSearchParams({ search: query, page: totalPages })
+        ? setSearchParams({ [searchQueryParamName]: query, page: totalPages })
         : setSearchParams({ page: totalPages });
     }
   };

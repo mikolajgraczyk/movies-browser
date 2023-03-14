@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { selectMovieCrew } from "../MovieSlice";
+import { selectMovieCrew } from "../movieSlice";
 import TilesSection from "../../../../common/TilesSection";
 import { GridList } from "../../../../common/GridList";
 import ActorTile from "../../../people/ActorTile";

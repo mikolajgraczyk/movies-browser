@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { selectMovieInfo } from "../MovieSlice";
+import { selectMovieInfo } from "../movieSlice";
 import Rating from "../Rating";
 import {
   StyledBackgroundPoster,

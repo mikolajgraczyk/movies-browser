@@ -21,6 +21,7 @@ const Crew = () => {
                 genreIds={movie.genre_ids}
                 poster={movie.poster_path}
                 subtitle={`${movie.job} ${movie.release_date.slice(0, 4)}`}
+                id={movie.id}
                 score={movie.vote_average}
                 votes={movie.vote_count}
               />

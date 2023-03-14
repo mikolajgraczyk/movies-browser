@@ -5,12 +5,13 @@ import MovieTile from "../../MovieTile";
 import { useSelector } from "react-redux";
 import { selectMovies, selectMoviesTotalResults } from "../../moviesSlice";
 import { useSearchParams } from "react-router-dom";
+import searchQueryParamName from "../../../../common/searchQueryParamName";
 
 const PopularMovies = () => {
   const movies = useSelector(selectMovies);
-  const totalResults = useSelector(selectMoviesTotalResults)
+  const totalResults = useSelector(selectMoviesTotalResults);
   const [searchParams] = useSearchParams();
-  const query = searchParams.get("search");
+  const query = searchParams.get(searchQueryParamName);
   const sectionTitle = query
     ? `Search results for "${query}" (${totalResults})`
     : "Popular Movies";

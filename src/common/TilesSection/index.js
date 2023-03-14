@@ -1,11 +1,11 @@
-import { SectionTitle, StyledTilesSection } from "./styled";
+import { SectionTitle } from "./styled";
 
 const TilesSection = ({ title, children, location }) => {
   return (
-    <StyledTilesSection>
+    <section>
       <SectionTitle location={location}>{title}</SectionTitle>
       {children}
-    </StyledTilesSection>
+    </section>
   );
 };
 export default TilesSection;

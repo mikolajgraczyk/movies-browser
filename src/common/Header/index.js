@@ -1,4 +1,5 @@
 import { useLocation, useSearchParams } from "react-router-dom";
+import searchQueryParamName from "../searchQueryParamName";
 import {
   StyledHeader,
   GridWrapper,
@@ -15,11 +16,12 @@ import {
 } from "./styled";
 
 const Header = () => {
-  const location = useLocation();
-  const searchQueryParamName = "search";
+  const { pathname } = useLocation();
+
   const [searchParams, setSearchParams] = useSearchParams({
     [searchQueryParamName]: "",
   });
+
   const query = searchParams.get(searchQueryParamName);
 
   const onInputChange = ({ target }) => {
@@ -30,6 +32,8 @@ const Header = () => {
       setSearchParams({ [searchQueryParamName]: target.value });
     }
   };
+
+  const isBlackBackground = pathname !== "/movies" && pathname !== "/people";
 
   return (
     <StyledHeader>
@@ -50,7 +54,7 @@ const Header = () => {
           </SearchBarIcon>
           <SearchBarInput
             placeholder={
-              location.pathname.includes("people")
+              pathname.includes("people")
                 ? "Search for people..."
                 : "Search for movies..."
             }
