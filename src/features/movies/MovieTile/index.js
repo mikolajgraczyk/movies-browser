@@ -6,14 +6,14 @@ import {
   StyledMovieTile,
   Subtitle,
   Title,
-  Dummy,
   MovieStandbyPoster,
   MoviesStandbyWrapper,
 } from "./styled";
 import Tags from "./Tags";
+import { DummyMovie } from "../DummyMovie";
 
 const MovieTile = ({ poster, title, subtitle, score, votes, genreIds, id }) => {
-const [posterLoaded, setPosterLoaded] = useState(false);
+  const [posterLoaded, setPosterLoaded] = useState(false);
 
   return (
     <StyledMovieTile to={`/movies/${id}`}>
@@ -31,7 +31,7 @@ const [posterLoaded, setPosterLoaded] = useState(false);
         </>
       ) : (
         <div>
-          <Dummy />
+          <DummyMovie />
         </div>
       )}
 

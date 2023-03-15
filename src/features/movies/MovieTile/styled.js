@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import styled, { css } from "styled-components";
-import posterImage from "../DummyMovie/DummyIcon.svg";
+import { DummyMovie } from "../DummyMovie";
 
 const bpMobile = ({ theme }) => theme.breakpoint.mobile;
 
@@ -87,25 +87,6 @@ export const Subtitle = styled.p`
   }
 `;
 
-export const Dummy = styled.div`
-  max-height: 750px;
-  max-width: 500px;
-  aspect-ratio: 2 / 3;
-  background-color: ${({ theme }) => theme.color.silver};
-  border-radius: 5px;
-  object-fit: cover;
-  background-image: url(${posterImage});
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 28%;
-
-  @media (max-width: ${bpMobile}px) {
-    width: 114px;
-    background-size: auto;
-    flex-shrink: 0;
-  }
-`;
-
 export const MoviesStandbyWrapper = styled.div`
   ${({ loaded }) =>
     loaded &&
@@ -114,7 +95,7 @@ export const MoviesStandbyWrapper = styled.div`
     `}
 `;
 
-export const MovieStandbyPoster = styled(Dummy)`
+export const MovieStandbyPoster = styled(DummyMovie)`
   background-color: transparent;
   background: none;
 `;

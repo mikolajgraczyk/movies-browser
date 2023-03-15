@@ -1,4 +1,5 @@
 import { useSelector } from "react-redux";
+import { DummyMovie } from "../../DummyMovie";
 import { selectMovieInfo } from "../movieSlice";
 import Rating from "../Rating";
 import {
@@ -28,7 +29,7 @@ const About = () => {
           alt=""
         />
       ) : (
-        <Dummy />
+        <DummyMovie />
       )}
       <InfoSection>
         <Name>{movieInfo.title}</Name>
