@@ -33,8 +33,6 @@ const Header = () => {
     }
   };
 
-  const isBlackBackground = pathname !== "/movies" && pathname !== "/people";
-
   return (
     <StyledHeader>
       <GridWrapper>
