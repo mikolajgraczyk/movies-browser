@@ -12,7 +12,7 @@ import {
   SearchBar,
   SearchBarIcon,
   SearchBarInput,
-  ButtonsWrapper,
+  NavigationList,
 } from "./styled";
 
 const Header = () => {
@@ -43,10 +43,16 @@ const Header = () => {
             <StyledVideoIcon />
             <TitleText>Movies Browser</TitleText>
           </TitleWrapper>
-          <ButtonsWrapper>
-            <StyledNavLink to="/movies">MOVIES</StyledNavLink>
-            <StyledNavLink to="/people">PEOPLE</StyledNavLink>
-          </ButtonsWrapper>
+          <nav>
+            <NavigationList>
+              <li>
+                <StyledNavLink to="/movies">MOVIES</StyledNavLink>
+              </li>
+              <li>
+                <StyledNavLink to="/people">PEOPLE</StyledNavLink>
+              </li>
+            </NavigationList>
+          </nav>
         </Wrapper>
         <SearchBar>
           <SearchBarIcon>

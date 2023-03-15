@@ -73,7 +73,7 @@ export const TitleText = styled.div`
   }
 `;
 
-export const ButtonsWrapper = styled.div`
+export const NavigationList = styled.ul`
   display: flex;
   gap: 16px;
 
@@ -81,9 +81,13 @@ export const ButtonsWrapper = styled.div`
     gap: 12px;
     margin-left: 30px;
   }
+  padding: 0;
+  margin: 0;
+  list-style: none;
 `;
 
 export const StyledNavLink = styled(NavLink)`
+  display: block;
   color: ${({ theme }) => theme.color.white};
   background: none;
   border: none;
