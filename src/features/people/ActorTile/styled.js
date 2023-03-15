@@ -32,7 +32,7 @@ export const ActorImage = styled.img`
   width: 100%;
   object-fit: cover;
   border-radius: 5px;
-  aspect-ratio: 2 / 3;
+  aspect-ratio: 3 / 4;
 
   ${({ loaded }) =>
     !loaded &&
