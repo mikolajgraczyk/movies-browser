@@ -56,6 +56,6 @@ Whether you're a casual moviegoer or a die-hard film enthusiast, our actor searc
 
 ## Created by:
 
-- Marcin Augun
-- Jakub Helizanowicz
-- Mikołaj Graczyk
+- [Marcin Augun](https://github.com/marcin10lw)
+- [Jakub Helizanowicz](https://github.com/HelkaPL)
+- [Mikołaj Graczyk](https://github.com/mikolajgraczyk)
