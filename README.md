@@ -1,6 +1,6 @@
 # Movies Browser
 
-![LOGO](https://github.com/marcin10lw/movies-browser/blob/feature/README.md/public/readmeFiles/moviesBrowserLogo.png?raw=true)
+![LOGO](https://github.com/marcin10lw/movies-browser/blob/main/public/readmeFiles/moviesBrowserLogo.png?raw=true)
 
 ## Latest version here ➡ [DEMO](https://github.com/marcin10lw/movies-browser/blob/main/public/readmeFiles/moviesBrowserLogo.png?raw=true)
 
