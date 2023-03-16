@@ -25,6 +25,8 @@ export const ActorImage = styled.img`
   display: block;
   width: 100%;
   border-radius: 5px;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
   grid-area: 1 / 1 / 4 / 2;
 
   @media (max-width: ${bpMobile}px) {
