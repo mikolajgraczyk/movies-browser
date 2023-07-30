@@ -2,7 +2,7 @@
 
 ![LOGO](https://github.com/marcin10lw/movies-browser/blob/main/public/readmeFiles/moviesBrowserLogo.png?raw=true)
 
-## Latest version here ➡ [DEMO]([https://github.com/marcin10lw/movies-browser/blob/main/public/readmeFiles/moviesBrowserLogo.png?raw=true](https://marcin10lw.github.io/movies-browser/#/movies)
+## Latest version here ➡ [DEMO](https://marcin10lw.github.io/movies-browser/)
 
 The Movies Browser is a platform that allows users to search and browse movies, popular actors and actresses, as well as their production history. The website was created by a team of three individuals as part of a group project and was completed within three weeks.
 
